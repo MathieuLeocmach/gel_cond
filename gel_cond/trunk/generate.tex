@@ -1,0 +1,231 @@
+\input{preamble}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{units}
+\usepgflibrary{decorations.shapes, decorations.fractals}
+\usetikzlibrary{positioning, plotmarks, matrix}
+\tikzexternalize
+%\tikzset{external/force remake}
+\tikzset{every mark/.append style={scale=0.8}}
+\pgfplotsset{every axis/.append style={small}}
+\pgfplotsset{compat=1.3}
+
+\begin{document}
+\tikzset{external/force remake}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+		pic3d/.style={inner sep=0}, %
+		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
+		]%
+		\begin{scope}[xshift=0.1\textwidth, yshift=-0.025\textwidth]
+			%\fill[blue!10] (0.01\textwidth,0) rectangle (0.2\textwidth, 0.19\textwidth);
+			\draw (0, 0.12\textwidth) rectangle (0.01\textwidth,0) %
+				(0.2\textwidth, 0.12\textwidth) rectangle (0.21\textwidth,0)%
+				(0, 0.13\textwidth) rectangle (0.01\textwidth,0.19\textwidth)%
+				(0.2\textwidth, 0.13\textwidth) rectangle (0.21\textwidth,0.19\textwidth)%
+				(0, 0.19\textwidth) rectangle (0.21\textwidth, 0.195\textwidth);		
+			\filldraw[gray] (0, 0.12\textwidth) rectangle (0.038\textwidth, 0.13\textwidth) 
+				(0.042\textwidth, 0.13\textwidth) rectangle (0.098\textwidth, 0.12\textwidth)
+				(0.102\textwidth, 0.13\textwidth) rectangle (0.158\textwidth, 0.12\textwidth)
+				(0.162\textwidth, 0.13\textwidth) rectangle (0.21\textwidth, 0.12\textwidth);
+			\fill[green, semitransparent] (0.1\textwidth, 0.17\textwidth) -- (0.06\textwidth, 0.22\textwidth) -- (0.14\textwidth, 0.22\textwidth) -- cycle;
+			\filldraw[lightgray] (0.05\textwidth, 0.22\textwidth) arc[start angle=180,delta angle=180,x radius=0.05\textwidth, y radius=0.01\textwidth] --cycle;
+			\begin{scope}[radius=0.008\textwidth, ball color=red!80]
+				\shade(0.08\textwidth, 0.175\textwidth) circle;
+				\shade(0.11\textwidth, 0.16\textwidth) circle;
+				\shade(0.05\textwidth, 0.15\textwidth) circle;
+				\shade(0.03\textwidth, 0.18\textwidth) circle;
+				\shade(0.14\textwidth, 0.14\textwidth) circle;
+				\shade(0.16\textwidth, 0.165\textwidth) circle;
+			\end{scope}
+			\draw[%
+				gray, decoration={coil, segment length=0.0025\textwidth, amplitude=0.0025\textwidth},
+				]
+				(0.06\textwidth, 0.1745\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.17\textwidth, 0.1345\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.172\textwidth, 0.14\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.145\textwidth, 0.16\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.19\textwidth, 0.18\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.09\textwidth, 0.14\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				(0.03\textwidth, 0.15\textwidth)
+				decorate{++(-0.0025\textwidth,-0.0025\textwidth) -- ++(0.0045\textwidth,0.0045\textwidth) -- ++(0,-0.0045\textwidth) -- ++(-0.005\textwidth,+0.005\textwidth) }
+				;
+			\begin{scope}[blue, every node/.style={circle, inner sep=0.002\textwidth, fill}]
+				\draw[decorate,decoration={shape backgrounds,shape=circle,shape size=0.002\textwidth}, fill=blue, step=0.01\textwidth] %
+				(0.012\textwidth,0) grid (0.19\textwidth, 0.08\textwidth);
+				\draw[decorate,decoration={shape backgrounds,shape=circle,shape size=0.002\textwidth}, fill=blue, step=0.017\textwidth] %
+				(0.012\textwidth, 0.08\textwidth) grid (0.195\textwidth, 0.115\textwidth);
+				%(0.17\textwidth,  0.0745\textwidth) -- (0.145\textwidth, 0.05\textwidth) -- (0.0514\textwidth, 0.09\textwidth)%
+				%(0.03\textwidth, 0.045\textwidth) -- (0.07\textwidth, 0.07\textwidth);
+			\end{scope}
+			\begin{scope}[blue!20,->, line width=0.005\textwidth]
+					\draw (0.16\textwidth, 0.08\textwidth) -- (0.16\textwidth, 0.11\textwidth);
+					\draw (0.1\textwidth, 0.08\textwidth) -- (0.1\textwidth, 0.11\textwidth);
+					\draw (0.04\textwidth, 0.08\textwidth) -- (0.04\textwidth, 0.11\textwidth);
+			\end{scope}
+			\node[lab, above right=0, inner sep=0] at (0, 0.195\textwidth) {a};
+			\begin{scope}[right, font=\footnotesize]
+				\node at (0.21\textwidth,0.21\textwidth) {Objective lens};
+				\node at (0.21\textwidth,0.17\textwidth) {Observation cell};
+				\node at (0.21\textwidth,0.125\textwidth){Filter};
+				\node[above right,blue] at (0.21\textwidth,0.08\textwidth) {Salt diffusion};
+				\node[above right] at (0.21\textwidth, 0) {Reservoir};
+			\end{scope}
+		\end{scope}
+		\begin{semilogyaxis}[%
+			at={(0.5\textwidth,0)}, anchor=left of south west,%
+			name={phasediag},%
+			width=0.425\textwidth, height=0.3\textwidth,%
+			xmin=0, xmax=40, xlabel={$\phi$}, x unit={\%},
+			ymin=0.08, ymax=3.5, ylabel={$c_p$}, y unit={\gram\per\liter},%
+			ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2}, yticklabels={0.1,0.2,,,0.5,,,,,1,2},%
+			legend pos=outer north east,%
+			legend style={font=\footnotesize},%
+			only marks,%
+			]%
+			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
+			%\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
+			\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
+			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
+			\addplot table [x index=1,y index=2] {phase_diag_fluid.csv};
+			\addplot table [x index=1,y index=2] {phase_diag_transient.csv};
+			\addplot table [x index=1,y index=2] {phase_diag_binodal.csv};
+			\legend{spinodal, binodal, gel, fluid, transient, binodal};
+			\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
+		\end{semilogyaxis}
+		\node[lab] at (phasediag.outer north west) {b};
+		
+		\begin{scope}[pic3d]
+			\node[below left=0 of phasediag.outer south east] (threeD_20min) {\includegraphics[width=0.3\textwidth]{155C_percolation_1645_p2size_t084.png}};
+			\node[left=0.01\textwidth of threeD_20min] (threeD_10min){\includegraphics[width=0.3\textwidth]{155C_percolation_1645_p2size_t044.png}};
+			\node[left=0.01\textwidth of threeD_10min] (threeD_5min) {\includegraphics[width=0.3\textwidth]{155C_percolation_1645_p2size_t024.png}};
+			\node[below=0.01\textwidth of threeD_5min] (threeD_30min) {\includegraphics[width=0.3\textwidth]{155C_1715_ageing_p2size_t00.png}};
+			\node[right=0.01\textwidth of threeD_30min] (threeD_40min) {\includegraphics[width=0.3\textwidth]{155C_1715_ageing_p2size_t20.png}};
+			\node[right=0.01\textwidth of threeD_40min] (threeD_50min) {\includegraphics[width=0.3\textwidth]{155C_1715_ageing_p2size_t40.png}};
+		\end{scope}
+		%\node[right=0.01\textwidth of threeD_10min] (threeD_20min){\includegraphics[width=0.3\textwidth]{3d_draft_20min.jpg}};
+		\begin{scope}[lab]
+			\node at (threeD_5min.north west) {c};
+			\node at (threeD_10min.north west) {d};
+			\node at (threeD_20min.north west) {e};
+			\node at (threeD_30min.north west) {f};
+			\node at (threeD_40min.north west) {g};
+			\node at (threeD_50min.north west) {h};
+		\end{scope}
+		\begin{scope}[above right]
+			\node at (threeD_5min.south west) {\unit{5}{\minute}};
+			\node at (threeD_10min.south west) {\unit{10}{\minute}};
+			\node at (threeD_20min.south west) {\unit{20}{\minute}};
+			\node at (threeD_30min.south west) {\unit{30}{\minute}};
+			\node at (threeD_40min.south west) {\unit{40}{\minute}};
+			\node at (threeD_50min.south west) {\unit{50}{\minute}};
+		\end{scope}
+	\end{tikzpicture}
+	\caption{\textbf{Observing gelation.} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Phase diagram of our system (the line is a guide for the eye). \textbf{c-h} Early stage of gelation observed experimentally (state point is circled in \textbf{b}). Pictures are computer reconstruction of the experimental coordinates coloured by the number of particles in clusters.}
+	\label{fig:methods}
+\end{figure}
+\tikzset{external/force remake=false}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+		pic3d/.style={inner sep=0}, %
+		lab/.style={below left, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
+		every axis/.style={xlabel near ticks, ylabel near ticks, legend cell align=left, legend style={font=\tiny}},%
+		]%
+		\begin{axis}[%
+			width=0.45\textwidth,%
+			xlabel={$t/\tau_B$}, xmin=0, xmax=20,%
+			ylabel={$R_g/\sigma$}, %ymin=1, %ymax=0.8,%
+			]%
+			%\node[pic3d, above right] at(axis cs:2.5,1.55) {\includegraphics[width=0.075\textwidth]{N3_0.png}};
+			%\node[pic3d, below right] at(axis cs:3,1.45) {\includegraphics[width=0.075\textwidth]{N3_1.png}};
+			%\node[pic3d, above left] at(axis cs:20,1.35) {\includegraphics[width=0.075\textwidth]{N3_2.png}};
+			\begin{scope}[every node/.style={inner sep=0}]
+				\node[circle, ball color=gray] at (axis cs:2.5,1.6) (n3_01){};
+				\node[circle, ball color=gray, right=0 of n3_01] (n3_02){};
+				\node[circle, ball color=gray, above right= -0.3em and +0.3em of n3_02] (n3_03){};
+				\node[circle, ball color=gray] at (axis cs:4,1.4) (n3_11){};
+				\node[circle, ball color=gray, below right=-0.3em and 0.3em of n3_11] (n3_12){};
+				\node[circle, ball color=gray, above right= +0 and -0 of n3_12] (n3_13){};
+				\node[circle, ball color=gray] at (axis cs:18,1.35) (n3_21){};
+				\node[circle, ball color=gray, above right=0.2em and -0.3em of n3_21] (n3_22){};
+				\node[circle, ball color=gray, right=0 of n3_21] (n3_23){};
+			\end{scope}
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{1}]{cluster_Rg_dynamics_N3.csv};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{2}]{cluster_Rg_dynamics_N3.csv};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{3}]{cluster_Rg_dynamics_N3.csv};
+			\legend{All triplets, Most elongated 20\%, Most compact 20\%};
+		\end{axis}
+		\begin{semilogxaxis}[%
+			at={(0.5\textwidth, 0)},%
+			width=0.45\textwidth,%
+			xlabel={$t/\tau_B$}, xmin=1, %xmax=200,%
+			ylabel={$\phi_\text{eff}$}, ymin=0, ymax=0.8,%
+			legend style={legend pos=north west},%
+			]%
+			\addplot table [x expr=\thisrowno{0}*6-49, y expr=\thisrowno{5}]{201A.csv};
+			\addplot table [x expr=(\thisrowno{0}+0.75)*6-45, y expr=\thisrowno{5}]{188B.csv};
+			\addplot table [x expr=(\thisrowno{0}+0.75)*6-60, y expr=\thisrowno{5}]{154B.csv};
+			\legend{Fluid, Shallow gel, Deep gel};
+		\end{semilogxaxis}
+		%\node[anchor=south west] at(0.4\textwidth, 0) {\includegraphics[width=0.45\textwidth]{4_EffectiveVolumeFraction_Results.pdf}};
+		\begin{semilogxaxis}[%
+			at={(0, -0.4\textwidth)},%
+			width=0.45\textwidth,%
+			xlabel={$t/\tau_B$}, xmin=1, %xmax=160,%
+			ylabel={$d_f$}, ymin=1, %ymax=2,%
+			legend style={legend pos=south east},%
+			no markers,%
+			]%
+			\addplot table [x expr=\thisrowno{0}/10-49, y expr=\thisrowno{1}]{201A.df};
+			%\addplot table [x expr=(\thisrowno{0}+45)/10, y expr=\thisrowno{1}]{155C.df};
+			\addplot table [x expr=(\thisrowno{0}+45)/10-45, y expr=\thisrowno{1}]{188B.df};
+			\addplot table [x expr=(\thisrowno{0}+45)/10-60, y expr=\thisrowno{1}]{154B.df};
+			\legend{Fluid, Shallow gel, Deep gel};
+		\end{semilogxaxis}
+	\end{tikzpicture}
+	\caption{\textbf{Fluid and dilute gel.} \textbf{a} Compaction mechanism of 3-particle-clusters in a fluid. The characteristic time to reach the stable compact cluster is much longer than $\tau_B$. \textbf{b} Effective volume fraction for various percolating and non-percolating samples. Dilute gels reach effective volume fractions comparable to dense phases due to their lack of compactness. \textbf{c-d} Time-evolution of the fractal dimension of the non-percolation clusters below (\textbf{c}) and above (\textbf{d}) the gelation boundary. Insets: typical $d_f$ plots for various times.}
+	\label{fig:fluid_dilute}
+\end{figure}
+
+%\tikzset{external/force remake}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+		pic3d/.style={inner sep=0}, %
+		lab/.style={below left, text height=0.8em, text depth=0.2em, font=\Large\bfseries}%
+		]%
+		\node (im) {\includegraphics[width=0.4\textwidth]{draft_compaction_dense}};
+		\node[left=0 of im] {\includegraphics[width=0.25\textwidth]{draft_nwk_dense_perco}};
+		\node[right=0 of im] {\includegraphics[width=0.25\textwidth]{draft_nwk_dense_compact}};
+		\matrix [below=0of im, inner sep=0.005\textwidth]{%
+			\node (arm1) {\includegraphics[width=0.3\textwidth]{gaussian_forces_10.png}};&%
+			\node (arm2) {\includegraphics[width=0.3\textwidth]{gaussian_forces_60.png}};&%
+			\node (arm3) {\includegraphics[width=0.3\textwidth]{gaussian_forces_65.png}};\\%
+			};
+		\node[above right=0 of arm1.south west] {$t=0$};
+		\node[above right=0 of arm2.south west] {$t=30\tau_B$};
+		\node[above right=0 of arm3.south west] {$t=33\tau_B$};
+	\end{tikzpicture}
+	\caption{\textbf{Gelation in dense samples.} \textbf{a} Typical time evolution of the largest cluster size and of the mean coordination number. Insets: Confocal images (2D) at percolation and at final stage. \textbf{b-d} Typical arm-breaking event, from relaxed, to stretched, to rupture. Particles are drawn to scale and colors indicate potential energies from blue (low) to red (high). The smooth surface is a Gaussian coarse-graining of the network pattern. %\textbf{e-f} Typical loop compaction event.  \textbf{b-f} are top views, thus there is no direct role of sedimentation.
+	}
+	\label{fig:dense}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{7_GelUniversality}
+	\caption{\textbf{Percolation vs compaction} for the three systems studied here: fluid (not percolating), dilute gel and dense gel.}
+	\label{fig:general}
+\end{figure}
+\end{document}
