@@ -6,64 +6,24 @@
 \author{Hideyo Tsurusawa}
 \author{Mathieu Leocmach}
 \author{Hajime Tanaka}
+
+\begin{abstract}
+
+\end{abstract}
+
 \maketitle
 
-\section{Abstract}
-Condensations are universal phenomenon in aggregating molecules.
-The molecules form droplets and crystals as equilibrium states and gels as non-equilibrium states.
-Gels, space-spanning networks with their dynamics arrested, have elasticity and are observed in many systems, including polymers and proteins.
-Since open network structures of gels are energetically disfavoured, the mechanism to self-assemble networks has received considerable attentions.
-Previously, simulation works have aimed reproducing the process of network formation.
-The results of Brownian dynamics simulations, which assume thermal fluctuations and short-range attractions between molecules, have shown formation of droplets in a moderate strength of attractions.
-In contrast, the simulations that also consider hydrodynamic interactions can reconstitute gelation in a moderate strength of attractions, suggesting key roles of hydrodynamic interactions in network formation.
-However, little is known experimentally about the gelation process because the previous method limits access to the process itself.
-Here, we observe the entire process of gelation in a single particle level by a new experimental method and demonstrate that gelation is not a simple condensation but frustrated by hydrodynamic interactions and mechanical tension.
-
-\section{Introduction} % Introduction, from wide attentions to specific subjects
-% General attentions
-Gels are space-spanning networks with their dynamics arrested, which cause elasticity and are widely used in our daily life such as food and filter.
-In a scientific viewpoint, gels have received wide attentions because gels are non-equilibrium non-ergodic states.
-% Focusing on 'colloidal gels'
-Among various model systems, colloidal gels have been intensively studied since colloids have a great advantage of a single particle resolution.
-% AO attraction
-Addition of polymer can induce inter-particle attractions, which gelation requires.
-As the polymer concentration increases, the attraction strength increases.
-% Summary
-Therefore, colloid – polymer mixtures have both a single particle resolution and tunabilities of inter-particle attractions.
+\section*{Introduction} 
 
 
 
-% Explaining previous works on colloidal gelation
-% Phase diagram
-Previous works have focused on the phase diagram of colloidal gels and revealed that the gelation boundary is close to the boundary of spinodal decomposition.
-% Importance of formation process
-But open network structures of gels are energetically disfavored and the mechanism to self-assemble network structures, competing with condensation, is still controversial.
-% Formation process / simulation works
-Numerical simulation works have studied the formation process of gels.
-Tanaka and Araki have compared simulations with and without hydrodynamic interactions and suggested that hydrodynamic interactions may play key roles in network formation.
-% Define our problem
-However, there are little experimental evidences of the gelation ‘ process ’ in colloidal suspensions because the previous method severely limits access to the formation process.
-% Our solution
-Here, we observe the ‘ entire process ’ of gelation in a single particle level by a new experimental method and reveal that gelation is not a simple condensation but frustrated by hydrodynamic interactions and mechanical tensions.
+\section*{Results}
 
+\subsection*{Observation of the initial stage}
 
+We use a novel experimental setup that allows the observation of the entire process of gelation at a single particle level (see Methods). The principle is to introduce salts through a membrane in a charged colloids and non adsorbing polymers suspension (see Fig.~\ref{fig:methods}a). The polymers induce a very short range depletion attraction between colloids, however long range electrostatic repulsion between the colloids prevent any aggregation. When we introduce salt the charges get screened and attraction suddenly kicks in, eventually leading to the formation of a gel. The whole process can take place on the microscope stage and can thus be observed in three dimensions from the very beginning.
 
-\section{New method} % Method of salt reservoir cell
-% Principle
-Colloidal gels require three components in a solvent: colloid, polymer, and salt.
-Polymers are added to induce inter-particle attractions, whereas the salt is needed to screen surface charges of colloids.
-If the system contains no salt, colloids can hardly aggregate because of the strong electrostatic repulsions.
-% Implementation
-Figure~\ref{fig:methods}a shows the schematic diagram of our cell system.
-Initially, colloid – polymer mixture without salt are incubated into the observation cell.
-Next, salt is added into the reservoir cell and observation is started.
-After the salt passes through the filter, the surface charges of colloids are screened and colloids start gelation.
-% Validity
-Figure~\ref{fig:methods}c-h shows an example of gelation.
-At t = 0 min, almost all colloids are dispersed by electrostatic repulsions.
-At t = 5 min, the salt diffuses into the observation cell and initiates gelation.
-At t = 30 min, the system percolates.
-By the new method, we can access the entire process of gelation in a single particle level.
+Figure~\ref{fig:methods}c-h shows a computer reconstruction from experimental coordinates of a typical gelation experiment. We are able to follow the state of the system from a Wigner crystal (Fig.~\ref{fig:methods}c) where the particles are far apart due to repulsion to a fully percolated network (Fig.~\ref{fig:methods}h).
 
 
 
@@ -194,43 +154,31 @@ Our study shed a new light on not only colloidal gelation but also dynamically a
 
 
 
-\section{Materials} % Materials and others
-% Materials
-We use poly-methyl-methacrylate colloids with its radius of \unit{1.4}{\micro\metre} with steric stabilizer of methacryloxypropyl terminated polydimethylsiloxane ( Glest ) dispersed in a mixture of cis-decalin (Tokyo Kasei) and bromocyclohexane ( Sigma-Aldrich ) that matches both optical index and density of the colloids.
-The non-adsorbing polymer is \unit{8.4}{\mega\dalton} polystyrene ( TOSOH ) whose radius of gyration in theta solvent is estimated to \unit{110}{\nano\metre}. 
-Here the solvent may be regarded as ``good'' and $25\%–40\%$ swelling of the polymer coils is expected~\cite{Royall2007}. We estimate the range of the interaction potential to \unit{148}{\nano\metre} by direct measurements~\cite{Royall2007}, which corresponds to $35\%$ swelling leading to a polymer-colloid size ratio $q=0.05$.
+\section*{Methods}
 
-In the absence of salt, the Debye length is expected to reach \unit{???}{\nano\metre}.
-Screening by tetrabutylammonium bromide (Fluka) at saturated concentration  brings down the Debye length to about \unit{13}{\nano\metre}.
+\subsection*{Experimental}
+
+We used \textsc{pmma} (poly(methyl methacrylate)) colloids sterically stabilized with methacryloxypropyl terminated \textsc{pdms}(poly(dimethyl siloxane)) and fluorescently labelled with rhodamine isothiocyanate chemically bonded to the \textsc{pmma}. Colloids are dispersed in a mixture of cis-decalin (Tokyo Kasei) and bromocyclohexane (Sigma-Aldrich) that matches both optical index and density of the colloids.
+
+To induce short-ranged depletion attraction, we use polystyrene (TOSOH) of molecular weight \unit{8.4}{\mega\dalton} as non-adsorbing polymer. The radius of gyration in theta solvent is estimated to \unit{110}{\nano\metre}. Here the solvent may be regarded as ``good'' and a Flory scaling of the measurements of~\cite{lu2008gelation} yields $R_g=\unit{148}{\nano\metre}$.
+
+The data were collected on a Leica SP5 confocal microscope, using \unit{532}{\nano\meter} laser excitation. The temperature was controlled on both stage and objective lens, allowing a more precise density matching. The scanned volume is at least \unit{82 \times 82 \times 85}{\micro\metre}. Standard particle tracking techniques allow us to localise our particles with errors below $1\%$ of a diameter. We carefully set the scanning time in order to track more than \unit{98}\% of colloids between two successive time steps.
+
+From direct confocal measurement~\cite{Royall2007, Poon2012}, we estimate the hard-core diameter of our colloids ($\sigma=\unit{2.75}{\micro\metre}$) and the range of the interaction potential (that confirmed our scaling of $R_g$ within $1\%$), leading to a polymer-colloid size ratio $q = 2R_g/\sigma = 0.10(6)$. Two particles are considered bonded when their centres are within $\sigma+2R_g$, which corresponds to the first minimum of $g(r)$.
+
+In the absence of salt, the Debye length is expected to reach \unit{100}{\nano\metre} and the (weakly) charged colloids experience a long range electrostatic repulsion. We confirm that colloids never come close enough to feel the short-ranged attraction. Screening by tetrabutylammonium bromide (Fluka) at saturated concentration brings down the Debye length to about \unit{13}{\nano\metre}, practically discarding the repulsion.
 
 % Salt-reservoir system
 %% Design of the cell
-The observation cell has a thickness of approximately \unit{200}{\micro\metre}, whose volume is approximately 1/400 of the volume of the reservoir.
-The filter is ??? with pore size of \unit{100}{\nano\metre}.
-%% Experimental procedure
-Initially, mixture of colloid and polymer without salt is incubated into the observation cell and solvent without salt is incubated into the reservoir.
-The reservoir is half-opened and we exchange the solvent into the solvent with salt.
-Then, scan starts within \unit{30}{\second}.
-%% Results
-We estimate that the diffusion time of salt is the order of \unit{10}{\second} as ???.
-In our experiments, the colloids in the top area of scan volume start aggregation \unit{1}{\min} after the colloids in the bottom area started aggregation.
-Therefore, salt diffuses into the observation cell within only several $\tau_B$.
+The colloids and polymers are contained in an observation cell ($\unit{1}{\milli\metre^2} \times \unit{200}{\micro\metre}$) in contact with an half-open reservoir approximately 400 larger in volume, via a millipore filter with pore size of \unit{100}{\nano\metre} that allows the salt through but neither polymer nor colloid (see Fig.~\ref{fig:methods}).
 
-% Microscope system
-Colloids are fluorescently labeled with rhodamines  and observed three-dimensionally by a laser-scanning confocal microscope (Leica SP-5) equipped with excitation laser with its wavelength of \unit{532}{\nano\metre}.
-The scan volume is \unit{82 \times 82 \times 85}{\micro\metre} or larger.
-We carefully set the scanning time in order to track more than \unit{98}\% of colloids between two continuous time steps.
+Initially the system is salt-free and colloids repel each-other to form a Wigner crystal~\cite{Royall2003}. A super-saturated salt solution at density matching composition is then added to the reservoir, which is immediately sealed to prevent evaporation. Our procedure induces practically no solvent flow in the observation cell. We confirmed the presence of undissolved salt several days after mixing, indicating that the observation cell was brought to saturation concentration. Data acquisition starts within \unit{30}{\second} after salt introduction.
 
-% Analysis
-%% Calculate center positions of colloids
-For single-particle analysis, the center position of each colloid is calculated from the three-dimensional images by the algorithm shown in ???.
-Trajectory of each colloid is calculated by the algorithm of ???.
-%% Identify 'bond'
-Colloid A and B are defined as bonded if the distance between the two colloids is smaller than a threshold.
-We define the threshold as the first minimum of $g(r)$ of a typical gel samples and apply it for all samples.
-%% Identify 'cluster'
-By linking all bonds, all clusters are identified and radius gyration and size of each cluster are calculated.
-Fractal dimension is calculated by fitting size $r_g\propto N^{d_f}$.
+Given the diffusion constants of Bromide and alkyl cation ($6$ and $\unit{2 \times 10^{-10}}{\metre^2\second^{-1}}$~\cite{Campbell2005}), we estimate the characteristic diffusion time of salt from top to bottom of the order of \unit{10}{\second}. Therefore, we reach uniform final salt concentration into the observation cell within only a few Brownian times of the colloids. Indeed we measured a delay of about \unit{1}{\min} between the aggregation at the bottom and at the top of the cell. We define the initial time of the aggregation process when the maximum of the $g(r)$ jumps from the lattice constant of the Wigner crystal to the hard-core diameter $\sigma$.
+
+
+\subsection*{Analysis}
+
 %% Track clusters
 To analyse compaction dynamics of clusters with three colloids, we search trajectory of each colloid such that the size of the cluster that contains the colloid is equal to three for continuous time steps.
 %% Colouring the picture of cutting NW
