@@ -81,6 +81,8 @@
 				\node[above right] at (0.21\textwidth, 0) {Reservoir};
 			\end{scope}
 		\end{scope}
+		
+		
 		\begin{semilogyaxis}[%
 			at={(0.5\textwidth,0)}, anchor=left of south west,%
 			name={phasediag},%
@@ -93,13 +95,13 @@
 			only marks,%
 			]%
 			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
-			%\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
-			\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
+			\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
+			\addplot[sharp plot, no marks, dotted] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
 			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_fluid.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_transient.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_binodal.csv};
-			\legend{spinodal, binodal, gel, fluid, transient, binodal};
+			\legend{spinodal, binodal, gas-solid, gel, fluid, transient, binodal};
 			\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
 		\end{semilogyaxis}
 		\node[lab] at (phasediag.outer north west) {b};
