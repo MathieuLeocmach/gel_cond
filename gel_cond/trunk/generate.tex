@@ -97,12 +97,13 @@
 			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
 			\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
 			\addplot[sharp plot, no marks, dotted] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
+			%\addplot+[forget plot] table [x index=1,y index=2] {phase_diag_capillary.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_fluid.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_transient.csv};
-			\addplot table [x index=1,y index=2] {phase_diag_binodal.csv};
-			\legend{spinodal, binodal, gas-solid, gel, fluid, transient, binodal};
+			\legend{spinodal, binodal, gas-solid, gel, fluid, transient};
 			\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
+			\node[draw, gray] at (axis cs:30, 1) (Cap1) {};
 		\end{semilogyaxis}
 		\node[lab] at (phasediag.outer north west) {b};
 		
