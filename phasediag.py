@@ -4,7 +4,7 @@ fig = figure('phase diagram')
 clf()
 for phase, color in [('gel', 'r'), ('fluid', 'b'), ('transient', 'g')]:
     phi, cp = np.loadtxt('phase_diag_%s.csv'%phase, unpack=True, skiprows=1, usecols=[1,2])
-    sample = np.loadtxt('phase_diag_gel.csv', usecols=[0], skiprows=1, dtype='str')
+    sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='str')
     scatter(phi, cp, c=color, label=phase)
     for s, p, c in zip(np.atleast_1d(sample), np.atleast_1d(phi), np.atleast_1d(cp)):
         gca().annotate(s, (p,c))
