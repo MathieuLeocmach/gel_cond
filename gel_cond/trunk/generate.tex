@@ -14,7 +14,7 @@
 
 \begin{document}
 \tikzset{external/force remake}
-\begin{figure}
+\begin{figure*}
 	\centering
 	\begin{tikzpicture}[
 		pic3d/.style={inner sep=0}, %
@@ -88,7 +88,7 @@
 			name={phasediag},%
 			width=0.425\textwidth, height=0.3\textwidth,%
 			xmin=0, xmax=40, xlabel={$\phi$}, x unit={\%},
-			ymin=0.08, ymax=3.5, ylabel={$c_p$}, y unit={\gram\per\liter},%
+			ymin=0.08, ymax=3.5, ylabel={$c_p$}, y unit={\si{\gram\per\litre}},%
 			ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2}, yticklabels={0.1,0.2,,,0.5,,,,,1,2},%
 			legend pos=outer north east,%
 			legend style={font=\footnotesize},%
@@ -125,17 +125,17 @@
 			\node at (threeD_50min.north west) {h};
 		\end{scope}
 		\begin{scope}[above right]
-			\node at (threeD_5min.south west) {\unit{5}{\minute}};
-			\node at (threeD_10min.south west) {\unit{10}{\minute}};
-			\node at (threeD_20min.south west) {\unit{20}{\minute}};
-			\node at (threeD_30min.south west) {\unit{30}{\minute}};
-			\node at (threeD_40min.south west) {\unit{40}{\minute}};
-			\node at (threeD_50min.south west) {\unit{50}{\minute}};
+			\node at (threeD_5min.south west) {\SI{5}{\minute}};
+			\node at (threeD_10min.south west) {\SI{10}{\minute}};
+			\node at (threeD_20min.south west) {\SI{20}{\minute}};
+			\node at (threeD_30min.south west) {\SI{30}{\minute}};
+			\node at (threeD_40min.south west) {\SI{40}{\minute}};
+			\node at (threeD_50min.south west) {\SI{50}{\minute}};
 		\end{scope}
 	\end{tikzpicture}
 	\caption{\textbf{Observing gelation.} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Phase diagram of our system (the line is a guide for the eye). \textbf{c-h} Early stage of gelation observed experimentally (state point is circled in \textbf{b}). Pictures are computer reconstruction of the experimental coordinates coloured by the number of particles in clusters.}
 	\label{fig:methods}
-\end{figure}
+\end{figure*}
 \tikzset{external/force remake=false}
 
 \begin{figure}
@@ -220,7 +220,7 @@
 		\node[above right=0 of arm2.south west] {$t=30\tau_B$};
 		\node[above right=0 of arm3.south west] {$t=33\tau_B$};
 	\end{tikzpicture}
-	\caption{\textbf{Gelation in dense samples.} \textbf{a} Typical time evolution of the largest cluster size and of the mean coordination number. Insets: Confocal images (2D) at percolation and at final stage. \textbf{b-d} Typical arm-breaking event, from relaxed, to stretched, to rupture. Particles are drawn to scale and colors indicate potential energies from blue (low) to red (high). The smooth surface is a Gaussian coarse-graining of the network pattern. %\textbf{e-f} Typical loop compaction event.  \textbf{b-f} are top views, thus there is no direct role of sedimentation.
+	\caption{\textbf{Gelation in dense samples.} \textbf{a} Typical time evolution of the largest cluster size and of the mean coordination number. Insets: Confocal images (2D) at percolation and at final stage. \textbf{b-d} Typical arm-breaking event, from relaxed, to stretched, to rupture ($\phi=29~\%$ and $c_p=\SI{0.71}{\gram\per\litre}$). Particles are drawn to scale and colors indicate potential energies from blue (low) to red (high). The smooth surface is a Gaussian coarse-graining of the network pattern. %\textbf{e-f} Typical loop compaction event.  \textbf{b-f} are top views, thus there is no direct role of sedimentation.
 	}
 	\label{fig:dense}
 \end{figure}
