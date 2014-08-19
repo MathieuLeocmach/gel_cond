@@ -10,10 +10,15 @@
 %\tikzset{external/force remake}
 \tikzset{every mark/.append style={scale=0.8}}
 \pgfplotsset{every axis/.append style={small}}
-\pgfplotsset{compat=1.3}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzsetexternalprefix{figs/}
 
 \begin{document}
-\tikzset{external/force remake}
+\tikzset{external/force remake=false}
 \begin{figure*}
 	\centering
 	\begin{tikzpicture}[
@@ -226,9 +231,60 @@
 \end{figure}
 
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{7_GelUniversality}
-	\caption{\textbf{Percolation vs compaction} for the three systems studied here: fluid (not percolating), dilute gel and dense gel.}
+	\tikzset{external/force remake}
+	\tikzsetnextfilename{hydro}
+	\begin{tikzpicture}
+		\begin{groupplot}[%
+			group style={
+				group name=g, group size=1 by 2,
+				},
+			width=\columnwidth,%
+			]
+			\nextgroupplot[
+			xlabel={$t/\tau_B$}, xmin=0, xmax=20,%
+			ylabel={$R_g/\sigma$},
+			]%
+			\begin{scope}[every node/.style={inner sep=0.4em}]
+				\node[circle, ball color=gray] at (axis cs:2.5,1.6) (n3_01){};
+				\node[circle, ball color=gray, right=0 of n3_01] (n3_02){};
+				\node[circle, ball color=gray, above right= -0.4em and +0.4em of n3_02] (n3_03){};
+				\node[circle, ball color=gray] at (axis cs:4,1.4) (n3_11){};
+				\node[circle, ball color=gray, below right=-0.4em and 0.4em of n3_11] (n3_12){};
+				\node[circle, ball color=gray, above right= +0 and -0 of n3_12] (n3_13){};
+				\node[circle, ball color=gray] at (axis cs:18,1.35) (n3_21){};
+				\node[circle, ball color=gray, above right=0.3em and -0.4em of n3_21] (n3_22){};
+				\node[circle, ball color=gray, right=0 of n3_21] (n3_23){};
+			\end{scope}
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{1}]{cluster_Rg_dynamics_N3.csv};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{2}]{cluster_Rg_dynamics_N3.csv};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{3}]{cluster_Rg_dynamics_N3.csv};
+			\legend{All triplets, Most elongated 20\%, Most compact 20\%};
+			
+		\nextgroupplot[
+			xlabel={angle (degree)}, xmin=0,xmax=180,%
+			ylabel={probability (degree${}^{-2}$)}, ymin=0,
+			no markers,%
+			height=0.6\columnwidth%,
+			]
+			\addplot+[gray!50, fill=gray!50, area legend] file {all.angles} \closedcycle;
+			\addplot file {new.angles};
+			\addplot+[blue] file {alone.angles};
+			\legend{existing, future, isolated};
+			
+			%sketch future
+			\fill[radius=0.6em, red!50] (axis cs:20,0.02) circle[] +(0,1.2em) circle[] ++(1.2em,0) circle[] +(-120:1.2em) circle[];
+			\draw[ultra thick] (axis cs:20,0.02) -- ++(1.2em,0) -- +(-120:1.2em);
+			\draw[thick, dotted] (axis cs:20,0.02) +(1.2em,0) -- +(0,1.2em);
+			
+			%sketch alone
+			\fill[radius=0.6em, blue!50] (axis cs:90,0.04) circle[] +(-1.2em,0) circle[] +(-120:1.2em) circle[] +(30:1.5em) circle[];
+			\draw[ultra thick] (axis cs:90,0.04) -- +(-1.2em,0) (axis cs:90,0.04)-- +(-120:1.2em);
+			\draw[thick, dotted] (axis cs:90,0.04) -- +(30:1.5em);
+			
+			
+		\end{groupplot}
+	\end{tikzpicture}
+	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Bond angle distribution in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles.}
 	\label{fig:general}
 \end{figure}
 \end{document}
