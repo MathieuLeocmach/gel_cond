@@ -294,7 +294,7 @@
 \end{figure}
 
 \begin{figure*}
-	\tikzset{external/force remake}
+	%\tikzset{external/force remake}
 	\tikzsetnextfilename{cell_vs_cap}
 	\begin{tikzpicture}[
 		pic3d/.style={inner sep=0}, %
@@ -400,4 +400,57 @@
 	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Phase diagram. \textbf{c-e} Comparison between gels made at the same state point ($\phi=27~\%$, $c_p=\SI{0.75}{\gram\per\litre}$) either in situ (\textbf{c}, blue) or ex situ (\textbf{d}, red).}
 	\label{fig:cell_vs_cap}
 \end{figure*}
+
+
+\begin{figure*}
+	\tikzset{external/force remake}
+	\tikzsetnextfilename{wholeprocess}
+	\begin{tikzpicture}
+	\begin{groupplot}[
+	group style={
+			group name=g, group size=1 by 2,
+			vertical sep=3em,
+			},
+		width=0.4\textwidth,%
+		height=0.2\textwidth+1em,%
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+		]
+		\nextgroupplot[
+			xlabel={time (min)},
+			ymin=0, ymax=3, ylabel={Porod exponent},]
+		\addplot[no marks, error bars/.cd, y dir=both,y explicit] table[y error index=2] {155C.porod};
+		
+		\nextgroupplot[
+			xmode=log, ymode=log,
+			xlabel={$(t-t_0)/\tau_B$},
+			ylabel=$\langle q\rangle\sigma$,
+			ytick={0.6,0.8,1,1.6,2}, yticklabels={0.6, 0.8,1,1.6, 2},
+			]
+		\addplot[only marks] table[x expr=6*(\thisrowno{0}-5)]{155C.qmax};
+		\addplot+[red, no marks, domain=50:300] {6*x^(-1/3)} node[midway, above]{$-1/3$};
+	\end{groupplot}
+	
+	
+	\matrix[
+		matrix of nodes, inner sep=0, column sep=0.0125\textwidth, row sep=0.5em,
+		matrix anchor=north west,
+		at={($(g c1r1.outer north east)+(-\textwidth,0)$)},
+		] (m){
+		\SI{5}{\minute} & \SI{10}{\minute} & \SI{20}{\minute} \\
+		\includegraphics[width=0.19\textwidth]{155C_percolation_1645_p2size_t024s.png}&
+		\includegraphics[width=0.19\textwidth]{155C_percolation_1645_p2size_t044s.png}&
+		\includegraphics[width=0.19\textwidth]{155C_percolation_1645_p2size_t084s.png}\\
+		 \SI{30}{\minute} & \SI{40}{\minute} & \SI{50}{\minute}\\
+		\includegraphics[width=0.19\textwidth]{155C_1715_ageing_p2size_t00s.png}&
+		\includegraphics[width=0.19\textwidth]{155C_1715_ageing_p2size_t20s.png}&
+		\includegraphics[width=0.19\textwidth]{155C_1715_ageing_p2size_t40s.png}\\
+		};
+	
+	\end{tikzpicture}
+\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is salt introduction. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Evolution of Porod exponent. \textbf{c} Growth of the characteristic wave number. Time origin is shifted to correspond to the melting of the Wigner crystal.}
+\label{fig:wholeprocess}
+\end{figure*}
+
+
+
 \end{document}
