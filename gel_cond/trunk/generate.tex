@@ -213,9 +213,12 @@
 		pic3d/.style={inner sep=0}, %
 		lab/.style={below left, text height=0.8em, text depth=0.2em, font=\Large\bfseries}%
 		]%
-		\node (im) {\includegraphics[width=0.4\textwidth]{draft_compaction_dense}};
-		\node[left=0 of im] {\includegraphics[width=0.25\textwidth]{draft_nwk_dense_perco}};
-		\node[right=0 of im] {\includegraphics[width=0.25\textwidth]{draft_nwk_dense_compact}};
+		\node (im) {%\includegraphics[width=0.4\textwidth]{draft_compaction_dense}
+		};
+		\node[left=0 of im] {%\includegraphics[width=0.25\textwidth]{draft_nwk_dense_perco}
+		};
+		\node[right=0 of im] {%\includegraphics[width=0.25\textwidth]{draft_nwk_dense_compact}
+		};
 		\matrix [below=0of im, inner sep=0.005\textwidth]{%
 			\node (arm1) {\includegraphics[width=0.3\textwidth]{gaussian_forces_10.png}};&%
 			\node (arm2) {\includegraphics[width=0.3\textwidth]{gaussian_forces_60.png}};&%
@@ -294,7 +297,7 @@
 \end{figure}
 
 \begin{figure*}
-	%\tikzset{external/force remake}
+	\tikzset{external/force remake}
 	\tikzsetnextfilename{cell_vs_cap}
 	\begin{tikzpicture}[
 		pic3d/.style={inner sep=0}, %
@@ -370,6 +373,11 @@
 		] (cellsketch) {};
 		\node[lab, below right=0, inner sep=0] at (cellsketch.north west) {a};
 		
+		%%%%Capillary vs Reservoir Cell%%%
+		\node[inner sep=0, below right=0 and 1em of cellsketch.north east] (ResSnapshot) {\includegraphics[width=0.2\textwidth]{Res362A_scan2Snapshot1.jpg}};
+		\node[inner sep=0, above right=0 and 1em of cellsketch.south east] (CapSnapshot) {\includegraphics[width=0.2\textwidth]{Cap362_Snapshot1.jpg}};
+		\node[lab,white] at (ResSnapshot.north west) {b};
+		\node[lab,white] at (CapSnapshot.north west) {c};
 		
 		%%%%Phase diagram%%%%
 		
@@ -393,11 +401,11 @@
 			\addplot table [x index=1,y index=2] {phase_diag_clusters.csv};
 			\legend{spinodal, gel, fluid, clusters};
 			\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
-			\node[draw, gray] at (axis cs:30, 1) (Cap1) {};
+			\node[draw, gray] at (axis cs:25.7, 1.43) (Cap1) {};
 		\end{axis}
-		\node[lab] at (phasediag.outer north west) {b};
+		\node[lab] at (phasediag.outer north west) {d};
 	\end{tikzpicture}
-	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Phase diagram. \textbf{c-e} Comparison between gels made at the same state point ($\phi=27~\%$, $c_p=\SI{0.75}{\gram\per\litre}$) either in situ (\textbf{c}, blue) or ex situ (\textbf{d}, red).}
+	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Confocal picture of a gel formed in situ ($\phi=25.5~\%$, $c_p=\SI{1.4}{\gram\per\litre}$), \SI{1}{\hour} after gelation. \textbf{c} Confocal picture of a gel at the same state point formed ex situ, \SI{1}{\hour} after shear melting. \textbf{d} Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory.}
 	\label{fig:cell_vs_cap}
 \end{figure*}
 
