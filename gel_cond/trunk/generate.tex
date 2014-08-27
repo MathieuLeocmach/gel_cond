@@ -297,7 +297,7 @@
 \end{figure}
 
 \begin{figure*}
-	\tikzset{external/force remake}
+	%\tikzset{external/force remake}
 	\tikzsetnextfilename{cell_vs_cap}
 	\begin{tikzpicture}[
 		pic3d/.style={inner sep=0}, %
@@ -413,7 +413,9 @@
 \begin{figure*}
 	\tikzset{external/force remake}
 	\tikzsetnextfilename{wholeprocess}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[
+		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
+		]
 	\begin{groupplot}[
 	group style={
 			group name=g, group size=1 by 2,
@@ -424,9 +426,11 @@
 		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
 		]
 		\nextgroupplot[
-			xlabel={time (min)},
-			ymin=0, ymax=3, ylabel={Porod exponent},]
-		\addplot[no marks, error bars/.cd, y dir=both,y explicit] table[y error index=2] {155C.porod};
+			xlabel={time (min)}, xmin=0,
+			ymin=0, ymax=1, ylabel={aspect ratio},
+			only marks,]
+		\addplot table {155C_percolation_1645.aspect} node[below left] {$\lambda_3/\lambda_1$};
+		\addplot table[y index=3] {155C_percolation_1645.aspect} node[above left] {$\lambda_2/\lambda_1$};
 		
 		\nextgroupplot[
 			xmode=log, ymode=log,
@@ -453,9 +457,11 @@
 		\includegraphics[width=0.19\textwidth]{155C_1715_ageing_p2size_t20s.png}&
 		\includegraphics[width=0.19\textwidth]{155C_1715_ageing_p2size_t40s.png}\\
 		};
-	
+	\node[lab] at (m.north west) {a};
+	\node[lab] at (g c1r1.outer north west) {b};
+	\node[lab] at (g c1r2.outer north west) {c};
 	\end{tikzpicture}
-\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is salt introduction. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Evolution of Porod exponent. \textbf{c} Growth of the characteristic wave number. Time origin is shifted to correspond to the melting of the Wigner crystal.}
+\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is salt introduction. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Evolution of average aspect ratios of cluster containing more than 4 particles. \textbf{c} Growth of the characteristic wave number. Time origin is shifted to correspond to the melting of the Wigner crystal.}
 \label{fig:wholeprocess}
 \end{figure*}
 
