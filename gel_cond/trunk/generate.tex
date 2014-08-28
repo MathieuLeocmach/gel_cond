@@ -234,44 +234,48 @@
 \end{figure}
 
 \begin{figure}
-	%\tikzset{external/force remake}
+	\tikzset{external/force remake}
 	\tikzsetnextfilename{hydro}
 	\begin{tikzpicture}[lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries}]
 		\begin{groupplot}[%
 			group style={
-				group name=g, group size=1 by 2,
-				vertical sep=4em,
+				group name=g, group size=2 by 1,
+				horizontal sep=3em,
 				},
-			width=\columnwidth,%
+			width=0.5\columnwidth+1em,%
+			height=0.5\columnwidth,
 			ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
 			]
 			\nextgroupplot[
-			height=0.8\columnwidth-1em,
+			%height=0.8\columnwidth-1em,
 			xlabel={$t/\tau_B$}, xmin=0, xmax=20,%
 			ylabel={$R_g/\sigma$},
 			]%
-			\begin{scope}[every node/.style={inner sep=0.4em}]
-				\node[circle, ball color=gray] at (axis cs:2.5,1.6) (n3_01){};
-				\node[circle, ball color=gray, right=0 of n3_01] (n3_02){};
-				\node[circle, ball color=gray, above right= -0.4em and +0.4em of n3_02] (n3_03){};
-				\node[circle, ball color=gray] at (axis cs:4,1.4) (n3_11){};
-				\node[circle, ball color=gray, below right=-0.4em and 0.4em of n3_11] (n3_12){};
-				\node[circle, ball color=gray, above right= +0 and -0 of n3_12] (n3_13){};
-				\node[circle, ball color=gray] at (axis cs:18,1.35) (n3_21){};
-				\node[circle, ball color=gray, above right=0.3em and -0.4em of n3_21] (n3_22){};
-				\node[circle, ball color=gray, right=0 of n3_21] (n3_23){};
-			\end{scope}
-			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{1}]{cluster_Rg_dynamics_N3.csv};
-			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{2}]{cluster_Rg_dynamics_N3.csv};
-			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{3}]{cluster_Rg_dynamics_N3.csv};
-			\legend{All triplets, Most elongated 20\%, Most compact 20\%};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{1}]{cluster_Rg_dynamics_N3.csv} node[pos=0, above right] {all};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{2}]{cluster_Rg_dynamics_N3.csv} node[pos=0, right] {most elongated};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{3}]{cluster_Rg_dynamics_N3.csv} node[pos=0, above right] {least elongated};
+			%\legend{All triplets, Most elongated 20\%, Most compact 20\%};
 			
 		\nextgroupplot[
-			xlabel={angle (degree)}, xmin=0,xmax=180,%
-			ylabel={probability (degree${}^{-2}$)}, ymin=0,
-			no markers,%
-			height=0.6\columnwidth%,
-			]
+			%height=0.6\columnwidth,
+			xlabel={$t/\tau_B$}, xmin=0, xmax=400,
+			ymin=0, ymax=1, ylabel={aspect ratio},
+			only marks,]
+		\addplot table[x expr=\thisrowno{0}*6-19] {172A_1206_percolation.aspect} node[below left] {$\lambda_3/\lambda_1$};
+		\addplot table[x expr=\thisrowno{0}*6-19, y index=3] {172A_1206_percolation.aspect} node[above left] {$\lambda_2/\lambda_1$};
+	\end{groupplot}
+		
+	\begin{axis}[
+		name=hist,
+		anchor=above north west,
+		at={(g c1r1.below south west)},
+		xlabel={angle (degree)}, xmin=0,xmax=180,%
+		ylabel={probability (degree${}^{-2}$)}, ymin=0,
+		no markers,%
+		width=\columnwidth,
+		height=0.6\columnwidth,
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+		]
 			\addplot+[gray!50, fill=gray!50, area legend] file {all.angles} \closedcycle;
 			\addplot file {new.angles};
 			\addplot+[blue] file {alone.angles};
@@ -286,15 +290,16 @@
 			\fill[radius=0.6em, blue!50] (axis cs:90,0.04) circle[] +(-1.2em,0) circle[] +(-120:1.2em) circle[] +(30:1.5em) circle[];
 			\draw[ultra thick] (axis cs:90,0.04) -- +(-1.2em,0) (axis cs:90,0.04)-- +(-120:1.2em);
 			\draw[thick, dotted] (axis cs:90,0.04) -- +(30:1.5em);
+		\end{axis}
 			
-			
-		\end{groupplot}
+		
 		\node[lab] at (g c1r1.outer north west) {a};
-		\node[lab] at (g c1r2.outer north west) {b};
+		\node[lab] at (g c2r1.outer north west) {b};
 	\end{tikzpicture}
 	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Bond angle distribution in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
 	\label{fig:hydro}
 \end{figure}
+\tikzset{external/force remake=false}
 
 \begin{figure*}
 	%\tikzset{external/force remake}
@@ -411,7 +416,7 @@
 
 
 \begin{figure}
-	\tikzset{external/force remake}
+	%\tikzset{external/force remake}
 	\tikzsetnextfilename{wholeprocess}
 	\begin{tikzpicture}[
 		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
@@ -435,18 +440,24 @@
 		height=10\baselineskip,%
 		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
 		]
+%		\nextgroupplot[
+%			xlabel={time (min)}, xmin=0,
+%			ymin=0, ymax=1, ylabel={aspect ratio},
+%			only marks,]
+%		\addplot table {155C_percolation_1645.aspect} node[below left] {$\lambda_3/\lambda_1$};
+%		\addplot table[y index=3] {155C_percolation_1645.aspect} node[above left] {$\lambda_2/\lambda_1$};
 		\nextgroupplot[
-			xlabel={time (min)}, xmin=0,
-			ymin=0, ymax=1, ylabel={aspect ratio},
-			only marks,]
-		\addplot table {155C_percolation_1645.aspect} node[below left] {$\lambda_3/\lambda_1$};
-		\addplot table[y index=3] {155C_percolation_1645.aspect} node[above left] {$\lambda_2/\lambda_1$};
+			xlabel=$q^2\sigma^2$, xmin=0,
+			ylabel=$A\tau_B/q^2\sigma^2$, ymin=0, ymax=0.2, ytick={0,0.1,0.2},
+			]
+		\addplot[only marks] table[x expr=\thisrowno{0}^2, y expr=\thisrowno{1}/\thisrowno{0}^2] {155C.growth};
+		\addplot[no marks, red, domain=1.6:7] {1.5*(1-0.115*x)/(1+3.62*x)}; 
 		
 		\nextgroupplot[
 			xmode=log, ymode=log,
 			xlabel={$(t-t_0)/\tau_B$},
-			ylabel=$\langle q\rangle\sigma$,
-			ytick={0.6,0.8,1,1.6,2}, yticklabels={0.6, 0.8,1,1.6, 2},
+			ylabel=$\langle q\rangle\sigma$, ymin=0.6,
+			ytick={0.6,0.8,1,1.2,1.6,2}, yticklabels={0.6, 0.8,1,1.2,1.6, 2},
 			]
 		\addplot[only marks] table[x expr=6*(\thisrowno{0}-5)]{155C.qmax};
 		\addplot+[red, no marks, domain=20:200] {4*x^(-1/3)} node[midway, below left]{$-1/3$};
@@ -474,23 +485,24 @@
 		matrix of nodes, inner sep=0, column sep=0.01\textwidth, row sep=0.5em,
 		matrix anchor=south west,
 		%at={($(g c1r1.outer north west)$)},
-		at={($(Sq.outer north west)$)},
+		at={($(Sq.outer north west)+(0,1em)$)},
 		] (m){
-		\SI{5}{\minute} & \SI{10}{\minute} \\
+		\SI{0}{\minute} & \SI{5}{\minute} \\
 		\includegraphics[width=0.48\columnwidth]{155C_percolation_1645_p2size_t024s.png}&
 		\includegraphics[width=0.48\columnwidth]{155C_percolation_1645_p2size_t044s.png}\\
-		\SI{20}{\minute} & \SI{30}{\minute}\\
+		\SI{15}{\minute} & \SI{25}{\minute}\\
 		\includegraphics[width=0.48\columnwidth]{155C_percolation_1645_p2size_t084s.png} &
 		\includegraphics[width=0.48\columnwidth]{155C_1715_ageing_p2size_t00s.png}\\
-		 \SI{40}{\minute} & \SI{50}{\minute}\\
+		 \SI{35}{\minute} & \SI{45}{\minute}\\
 		\includegraphics[width=0.48\columnwidth]{155C_1715_ageing_p2size_t20s.png}&
 		\includegraphics[width=0.48\columnwidth]{155C_1715_ageing_p2size_t40s.png}\\
 		};
 	\node[lab] at (m.north west) {a};
-	%\node[lab] at (g c1r1.outer north west) {b};
-	%\node[lab] at (g c1r2.outer north west) {c};
+	\node[lab] at (Sq.outer north west) {b};
+	\node[lab] at (g c1r1.outer north west) {c};
+	\node[lab] at (g c2r1.outer north west) {d};
 	\end{tikzpicture}
-\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is salt introduction. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Evolution of average aspect ratios of cluster containing more than 4 particles. \textbf{c} Growth of the characteristic wave number. Time origin is shifted to correspond to the melting of the Wigner crystal.}
+\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is the last frame before melting of Wigner crystal. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Structure factor evolution (a curve every \SI{150}{\second}). \textbf{c} Cahn plot of the initial growth rate $A(q)$. The line is a fit by Eq. XXX with $\xi=0.11\sigma$ and $\xi_{ve}=3.6\sigma$. \textbf{d} Growth of the characteristic wave number.}
 \label{fig:wholeprocess}
 \end{figure}
 
