@@ -240,14 +240,13 @@
 		\begin{groupplot}[%
 			group style={
 				group name=g, group size=2 by 1,
-				horizontal sep=3em,
+				horizontal sep=4em,
 				},
 			width=0.5\columnwidth+1em,%
 			height=0.5\columnwidth,
 			ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
 			]
 			\nextgroupplot[
-			%height=0.8\columnwidth-1em,
 			xlabel={$t/\tau_B$}, xmin=0, xmax=20,%
 			ylabel={$R_g/\sigma$},
 			]%
@@ -257,7 +256,7 @@
 			%\legend{All triplets, Most elongated 20\%, Most compact 20\%};
 			
 		\nextgroupplot[
-			%height=0.6\columnwidth,
+			width=0.5\columnwidth,
 			xlabel={$t/\tau_B$}, xmin=0, xmax=400,
 			ymin=0, ymax=1, ylabel={aspect ratio},
 			only marks,]
@@ -292,11 +291,11 @@
 			\draw[thick, dotted] (axis cs:90,0.04) -- +(30:1.5em);
 		\end{axis}
 			
-		
 		\node[lab] at (g c1r1.outer north west) {a};
 		\node[lab] at (g c2r1.outer north west) {b};
+		\node[lab] at (hist.outer north west) {c};
 	\end{tikzpicture}
-	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Bond angle distribution in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
+	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Evolution of the aspect ratios of clusters of 4 particles and more in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) \textbf{c} Bond angle distribution relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
 	\label{fig:hydro}
 \end{figure}
 \tikzset{external/force remake=false}
