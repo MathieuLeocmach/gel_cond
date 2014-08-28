@@ -234,7 +234,7 @@
 \end{figure}
 
 \begin{figure}
-	\tikzset{external/force remake}
+	%\tikzset{external/force remake}
 	\tikzsetnextfilename{hydro}
 	\begin{tikzpicture}[lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries}]
 		\begin{groupplot}[%
@@ -298,10 +298,10 @@
 	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Evolution of the aspect ratios of clusters of 4 particles and more in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) \textbf{c} Bond angle distribution relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
 	\label{fig:hydro}
 \end{figure}
-\tikzset{external/force remake=false}
+%\tikzset{external/force remake=false}
 
 \begin{figure*}
-	%\tikzset{external/force remake}
+	\tikzset{external/force remake}
 	\tikzsetnextfilename{cell_vs_cap}
 	\begin{tikzpicture}[
 		pic3d/.style={inner sep=0}, %
@@ -408,6 +408,9 @@
 			\node[draw, gray] at (axis cs:25.7, 1.43) (Cap1) {};
 		\end{axis}
 		\node[lab] at (phasediag.outer north west) {d};
+		
+		%scale bar
+		\draw[ultra thick] node[anchor=south east, inner xsep=0] (sb) at (CapSnapshot.south east |- phasediag.outer south)  {\SI{50}{\micro\metre}} (sb.north east) -- +(-0.069\textwidth,0);
 	\end{tikzpicture}
 	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Confocal picture of a gel formed in situ ($\phi=25.5~\%$, $c_p=\SI{1.4}{\gram\per\litre}$), \SI{1}{\hour} after gelation. \textbf{c} Confocal picture of a gel at the same state point formed ex situ, \SI{1}{\hour} after shear melting. \textbf{d} Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory.}
 	\label{fig:cell_vs_cap}
@@ -415,7 +418,7 @@
 
 
 \begin{figure}
-	%\tikzset{external/force remake}
+	\tikzset{external/force remake}
 	\tikzsetnextfilename{wholeprocess}
 	\begin{tikzpicture}[
 		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
@@ -454,7 +457,7 @@
 		
 		\nextgroupplot[
 			xmode=log, ymode=log,
-			xlabel={$(t-t_0)/\tau_B$},
+			xlabel={$(t-t_0)/\tau_B$}, xmin=1,
 			ylabel=$\langle q\rangle\sigma$, ymin=0.6,
 			ytick={0.6,0.8,1,1.2,1.6,2}, yticklabels={0.6, 0.8,1,1.2,1.6, 2},
 			]
