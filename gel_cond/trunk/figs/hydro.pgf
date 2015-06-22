@@ -1,0 +1,63 @@
+\begin{figure}
+	\begin{tikzpicture}[lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries}]
+		\begin{groupplot}[%
+			group style={
+				group name=g, group size=2 by 1,
+				horizontal sep=4em,
+				},
+			width=0.5\columnwidth+1em,%
+			height=0.5\columnwidth,
+			ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+			]
+			\nextgroupplot[
+			xlabel={$t/\tau_B$}, xmin=0, xmax=20,%
+			ylabel={$R_g/\sigma$},
+			]%
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{1}]{cluster_Rg_dynamics_N3.csv} node[pos=0, above right] {all};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{2}]{cluster_Rg_dynamics_N3.csv} node[pos=0, right] {most elongated};
+			\addplot table [x expr=\thisrowno{0}*6, y expr=\thisrowno{3}]{cluster_Rg_dynamics_N3.csv} node[pos=0, above right] {least elongated};
+			%\legend{All triplets, Most elongated 20\%, Most compact 20\%};
+			
+		\nextgroupplot[
+			width=0.5\columnwidth,
+			xlabel={$t/\tau_B$}, xmin=0, xmax=400,
+			ymin=0, ymax=1, ylabel={aspect ratio},
+			only marks,]
+		\addplot table[x expr=\thisrowno{0}*6-19] {172A_1206_percolation.aspect} node[below left] {$\lambda_3/\lambda_1$};
+		\addplot table[x expr=\thisrowno{0}*6-19, y index=3] {172A_1206_percolation.aspect} node[above left] {$\lambda_2/\lambda_1$};
+	\end{groupplot}
+		
+	\begin{axis}[
+		name=hist,
+		anchor=above north west,
+		at={(g c1r1.below south west)},
+		xlabel={angle (degree)}, xmin=0,xmax=180,%
+		ylabel={probability (degree${}^{-2}$)}, ymin=0,
+		no markers,%
+		width=\columnwidth,
+		height=0.6\columnwidth,
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+		]
+			\addplot+[gray!50, fill=gray!50, area legend] file {all.angles} \closedcycle;
+			\addplot file {new.angles};
+			\addplot+[blue] file {alone.angles};
+			\legend{existing, future, isolated};
+			
+			%sketch future
+			\fill[radius=0.6em, red!50] (axis cs:20,0.02) circle[] +(0,1.2em) circle[] ++(1.2em,0) circle[] +(-120:1.2em) circle[];
+			\draw[ultra thick] (axis cs:20,0.02) -- ++(1.2em,0) -- +(-120:1.2em);
+			\draw[thick, dotted] (axis cs:20,0.02) +(1.2em,0) -- +(0,1.2em);
+			
+			%sketch alone
+			\fill[radius=0.6em, blue!50] (axis cs:90,0.04) circle[] +(-1.2em,0) circle[] +(-120:1.2em) circle[] +(30:1.5em) circle[];
+			\draw[ultra thick] (axis cs:90,0.04) -- +(-1.2em,0) (axis cs:90,0.04)-- +(-120:1.2em);
+			\draw[thick, dotted] (axis cs:90,0.04) -- +(30:1.5em);
+		\end{axis}
+			
+		\node[lab] at (g c1r1.outer north west) {a};
+		\node[lab] at (g c2r1.outer north west) {b};
+		\node[lab] at (hist.outer north west) {c};
+	\end{tikzpicture}
+	\caption{\textbf{Hydrodynamics} \textbf{a} Evolution of triplet radii of gyration in a non percolating sample ($\phi=4~\%$, $c_p=\SI{1}{\gram\per\litre}$). The characteristic time to reach the stable compact cluster is much longer than the Brownian time. \textbf{b} Evolution of the aspect ratios of clusters of 4 particles and more in a percolating sample ($\phi=8~\%$, $c_p=\SI{1.5}{\gram\per\litre}$) \textbf{c} Bond angle distribution relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue). Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
+	\label{fig:hydro}
+\end{figure}

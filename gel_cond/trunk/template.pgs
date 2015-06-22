@@ -1,0 +1,20 @@
+\input{preamble}
+
+\usepackage{pgfplots}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{units}
+\usepgflibrary{decorations.shapes, decorations.fractals}
+\usetikzlibrary{positioning, plotmarks, matrix, fit, shapes.geometric}
+
+\tikzset{every mark/.append style={scale=0.8}}
+\pgfplotsset{every axis/.append style={small}}
+\pgfplotsset{compat=1.9}
+
+\usepackage[active,pdftex,tightpage]{preview}
+
+\PreviewEnvironment[]{tikzpicture}
+\PreviewEnvironment[]{pgfpicture}
+\begin{document}
+<>
+\end{document}
