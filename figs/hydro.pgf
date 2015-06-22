@@ -20,11 +20,17 @@
 			
 		\nextgroupplot[
 			width=0.5\columnwidth,
-			xlabel={$t/\tau_B$}, xmin=0, xmax=400,
+			xlabel={$t/\tau_B$}, xmin=0, xmax=175,
+			restrict x to domain=0:175,
 			ymin=0, ymax=1, ylabel={aspect ratio},
-			only marks,]
-		\addplot table[x expr=\thisrowno{0}*6-19] {172A_1206_percolation.aspect} node[below left] {$\lambda_3/\lambda_1$};
-		\addplot table[x expr=\thisrowno{0}*6-19, y index=3] {172A_1206_percolation.aspect} node[above left] {$\lambda_2/\lambda_1$};
+			%only marks,
+			legend pos=south east,%style={at={(1,0.5)},anchor=east},
+			no marks]
+		\addplot+[red] table[x expr=\thisrowno{0}*6-19] {172A_1206_percolation.aspect} node[below left] at (rel axis cs:1,0.6) {$\lambda_3/\lambda_1$};
+		\addplot+[dashed, red] table[x expr=\thisrowno{0}*6] {168A_2004_percolation.aspect};
+		\addplot+[blue] table[x expr=\thisrowno{0}*6-19, y index=3] {172A_1206_percolation.aspect} node[above left] at (rel axis cs:1,0.75) {$\lambda_2/\lambda_1$};
+		\addplot+[dashed, blue] table[x expr=\thisrowno{0}*6-19, y index=3] {168A_2004_percolation.aspect};
+		\legend{gel, cluster};
 	\end{groupplot}
 		
 	\begin{axis}[
