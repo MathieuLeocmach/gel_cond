@@ -4,15 +4,15 @@
 	]
 	\begin{groupplot}[
 	group style={
-			group name=g, group size=1 by 2,
-			%horizontal sep=4em,
+			group name=g, group size=3 by 1,
+			horizontal sep=4.5em,
 			},
-		width=0.25\textwidth,%
-		height=8\baselineskip,%
+		width=0.33\textwidth,%
+		%height=9\baselineskip,%
 		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
 		]
 		\nextgroupplot[
-			height=9\baselineskip,%
+			%height=9\baselineskip,%
 			xlabel=$L$, ylabel={count},
 			xmode=log, ymode=log,
 			ymin=1, xmin=1,
@@ -32,36 +32,53 @@
 			]
 			\addplot table[y expr=\thisrowno{1}*100] {150A_broken_q2.proba};
 			\addplot table[y expr=\thisrowno{1}*100] {150A_broken_q2_L2.proba};
+		
+		\nextgroupplot[
+			xlabel=$t/\tau_B$, ylabel=$P_\text{break}(L>3)$, 
+			ymin=0, xmode=log,
+			no marks
+			]
+			\addplot table[x expr=\thisrowno{0}/10-18, y index=2] {172A.broken} (axis cs:176,0) |- (rel axis cs:1,1);
+			\addplot table[x expr=\thisrowno{0}/10-151, y index=2] {162B.broken} (axis cs:16,0) |- (rel axis cs:1,1);
+			\addplot+[black] table[x expr=\thisrowno{0}/10-68, y index=2] {163A.broken} (axis cs:7,0) |- (rel axis cs:1,1);
+			
+			
 	\end{groupplot}
 	
+\let\mydima\relax
+\newlength\mydima
+\pgfmathsetlength{\mydima}{\textwidth/6}
 	\matrix[
 		matrix of nodes, inner sep=0, %column sep=0.01\textwidth, 
 		row sep=0.5em,
-		matrix anchor=north west,
-		at={($(g c1r1.outer north east)+(-\textwidth,0)$)},
+		matrix anchor=south west,
+		at={($(g c1r1.outer north west)+(0,0.5em)$)},
 		] (m){
 		\SI{0}{\minute} & \SI{16}{\minute} & \SI{22}{\minute} & \SI{30.5}{\minute} & \SI{31}{\minute} & \SI{90}{\minute} \\
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0000s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0032s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0043s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0061s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0062s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_particles_wireframe_t0180s.png}\\
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0000s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0032s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0043s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0061s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0062s.png}&
-		\includegraphics[width=0.13\textwidth]{breaking_wireframe_t0180s.png}\\
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0000s.png}&
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0032s.png}&
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0043s.png}&
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0061s.png}&
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0062s.png}&
+		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0180s.png}\\
+		\includegraphics[width=\mydima]{breaking_wireframe_t0000s.png}&
+		\includegraphics[width=\mydima]{breaking_wireframe_t0032s.png}&
+		\includegraphics[width=\mydima]{breaking_wireframe_t0043s.png}&
+		\includegraphics[width=\mydima]{breaking_wireframe_t0061s.png}&
+		\includegraphics[width=\mydima]{breaking_wireframe_t0062s.png}&
+		\includegraphics[width=\mydima]{breaking_wireframe_t0180s.png}\\
 		};
 	\node[lab] at (m.north west) {a};
 	\node[lab] at (g c1r1.outer north west) {b};
-	\node[lab] at (g c1r2.left of south west) {c};
+	\node[lab] at (g c2r1.outer north west) {c};
+	\node[lab] at (g c3r1.outer north west) {d};
+	\draw(m.north west) rectangle +(\textwidth, -\textheight);
 \end{tikzpicture}
 \caption{\textbf{Mechanical tension drives coarsening} 
 \textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b} Number of bond breaking function of the future on-graph distance for three state points (after percolation): $\phi=8,\,18,\,29~\%$, $c_p=1.5,\,0.6,\,\SI{0.7}{\gram\per\litre}$ for \textcolor{blue}{$\bullet$}, \textcolor{red}{\tiny$\blacksquare$} and $*$ respectively.
+\textbf{b} Number of bond breaking function of the future on-graph distance $L$ for three state points (after percolation): $\phi=8,\,18,\,29~\%$, $c_p=1.5,\,0.6,\,\SI{0.7}{\gram\per\litre}$ for \textcolor{blue}{$\bullet$}, \textcolor{red}{\tiny$\blacksquare$} and $*$ respectively.
 \textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (red) in the same sample as \textbf{a}.
+\textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for black, red and blue lines respectively. Vertical lines indicate the respective percolation times.
 }
 \label{fig:breaking}
 \end{figure*}
