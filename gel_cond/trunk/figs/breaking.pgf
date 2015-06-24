@@ -19,8 +19,8 @@
 			clip marker paths=true,
 			]
 			\addplot+[only marks] file {172A_broken_length.hist};
-			\addplot+[only marks] file {170A_broken_length.hist};
-			\addplot+[only marks,mark=asterisk, black] file {150A_broken_length.hist};
+			\addplot+[only marks] file {162B_broken_length.hist};
+			\addplot+[only marks,mark=asterisk, black] file {163A_broken_length.hist};
 			\addplot[domain=1:32, no marks] {1e6/x^3} node[midway, above right] {-3};
 			\addplot[domain=1:10, no marks] {1e4/x^4} node[midway, below left] {-4};
 			
@@ -31,7 +31,7 @@
 			no marks
 			]
 			\addplot table[y expr=\thisrowno{1}*100] {150A_broken_q2.proba};
-			\addplot table[y expr=\thisrowno{1}*100] {150A_broken_q2_L2.proba};
+			\addplot+[thick] table[y expr=\thisrowno{1}*100] {150A_broken_q2_L2.proba};
 		
 		\nextgroupplot[
 			xlabel=$t/\tau_B$, ylabel=$P_\text{break}(L>3)$, 
@@ -52,7 +52,7 @@
 		matrix of nodes, inner sep=0, %column sep=0.01\textwidth, 
 		row sep=0.5em,
 		matrix anchor=south west,
-		at={($(g c1r1.outer north west)+(0,0.5em)$)},
+		at={($(g c1r1.outer north west)+(-0.5em,0.5em)$)},
 		] (m){
 		\SI{0}{\minute} & \SI{16}{\minute} & \SI{22}{\minute} & \SI{30.5}{\minute} & \SI{31}{\minute} & \SI{90}{\minute} \\
 		\includegraphics[width=\mydima]{breaking_particles_wireframe_t0000s.png}&
@@ -76,9 +76,9 @@
 \end{tikzpicture}
 \caption{\textbf{Mechanical tension drives coarsening} 
 \textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b} Number of bond breaking function of the future on-graph distance $L$ for three state points (after percolation): $\phi=8,\,18,\,29~\%$, $c_p=1.5,\,0.6,\,\SI{0.7}{\gram\per\litre}$ for \textcolor{blue}{$\bullet$}, \textcolor{red}{\tiny$\blacksquare$} and $*$ respectively.
-\textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (red) in the same sample as \textbf{a}.
-\textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for black, red and blue lines respectively. Vertical lines indicate the respective percolation times.
+\textbf{b} Number of bond breaking function of the future on-graph distance $L$ (after percolation) for three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{blue}{$\bullet$}, \textcolor{red}{\tiny$\blacksquare$} and $*$ respectively.
+\textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (thick red) in the same sample as \textbf{a}.
+\textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for the same state points  as in b. Vertical lines indicate the respective percolation times.
 }
 \label{fig:breaking}
 \end{figure*}
