@@ -72,7 +72,7 @@
 	\node[lab] at (g c1r1.outer north west) {b};
 	\node[lab] at (g c2r1.outer north west) {c};
 	\node[lab] at (g c3r1.outer north west) {d};
-	\draw(m.north west) rectangle +(\textwidth, -\textheight);
+	%\draw(m.north west) rectangle +(\textwidth, -\textheight);
 \end{tikzpicture}
 \caption{\textbf{Mechanical tension drives coarsening} 
 \textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
