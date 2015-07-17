@@ -28,11 +28,10 @@
 %		\addplot table {155C_percolation_1645.aspect} node[below left] {$\lambda_3/\lambda_1$};
 %		\addplot table[y index=3] {155C_percolation_1645.aspect} node[above left] {$\lambda_2/\lambda_1$};
 		\nextgroupplot[
-			xlabel=$q^2\sigma^2$, xmin=0,
-			ylabel=$A\tau_B/q^2\sigma^2$, ymin=0, ymax=0.2, ytick={0,0.1,0.2},
+			xlabel={coordination number}, xmin=0,
+			ylabel=$R_g^\text{max}/L$, ymin=0, %ymax=0.2, ytick={0,0.1,0.2},
 			]
-		\addplot[only marks] table[x expr=\thisrowno{0}^2, y expr=\thisrowno{1}/\thisrowno{0}^2] {155C.growth};
-		\addplot[no marks, red, domain=1.6:7] {1.5*(1-0.115*x)/(1+3.62*x)}; 
+		
 		
 		\nextgroupplot[
 			xmode=log, ymode=log,
@@ -44,29 +43,12 @@
 		\addplot+[red, no marks, domain=20:200] {4*x^(-1/3)} node[midway, below left]{$-1/3$};
 	\end{groupplot}
 
-	\begin{axis}[name=Sq,
-		anchor=below south west,
-		at={(g c1r1.above north west)},
-		xmin=0, xmax=13, ymin=0,
-		xlabel=$q\sigma$, ylabel=$S(q)$,
-		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
-		scale only axis,
-		width=\columnwidth-3.5em,
-		height=6\baselineskip,
-		no marks, cycle list name=earthy]
-		\foreach \ii in {1,2,...,7}
-			\addplot table[y index=\ii] {155C_every150s.Sqs};
-		\draw[<-] (axis cs:3.1,3.3) -- +(45:1em) node[right]{Wigner};
-		\draw[<-,red!80!black] (axis cs:6.5,1.9) -- +(45:1em) node[right]{Hard sphere};
-		\draw[<-,red!60!yellow] (axis cs:0.8,7.5) -- +(0:1em) node[right]{Gelation};
-	\end{axis}
-
 	
 	\matrix[
 		matrix of nodes, inner sep=0, column sep=0.01\textwidth, row sep=0.5em,
-		matrix anchor=south west,
+		matrix anchor=south east,
 		%at={($(g c1r1.outer north west)$)},
-		at={($(Sq.outer north west)+(0,1em)$)},
+		at={($(g c2r1.outer north east)+(0,1em)$)},
 		] (m){
 		\SI{0}{\minute} & \SI{5}{\minute} \\
 		\includegraphics[width=0.48\columnwidth]{155C_percolation_1645_p2size_t024s.png}&
@@ -79,9 +61,8 @@
 		\includegraphics[width=0.48\columnwidth]{155C_1715_ageing_p2size_t40s.png}\\
 		};
 	\node[lab] at (m.north west) {a};
-	\node[lab] at (Sq.outer north west) {b};
-	\node[lab] at (g c1r1.outer north west) {c};
-	\node[lab] at (g c2r1.outer north west) {d};
+	\node[lab] at (g c1r1.outer north west) {b};
+	\node[lab] at (g c2r1.outer north west) {c};
 	\end{tikzpicture}
 \caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is the last frame before melting of Wigner crystal. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Structure factor evolution (a curve every \SI{150}{\second}). \textbf{c} Cahn plot of the initial growth rate $A(q)$. The line is a fit by Eq. XXX with $\xi=0.11\sigma$ and $\xi_{ve}=3.6\sigma$. \textbf{d} Growth of the characteristic wave number.}
 \label{fig:wholeprocess}
