@@ -2,6 +2,12 @@
 \begin{tikzpicture}[
 	lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
 	]
+\pgfplotscreateplotcyclelist{earthy}{%
+	red!40!black, every mark/.append style={fill=red!40!black},mark=*\\%
+	red!80!black, every mark/.append style={fill=red!80!black}, mark=square*\\%
+	red!80!yellow, mark=o\\%
+	red!40!yellow, every mark/.append style={fill=red!40!yellow},mark=star\\%
+	}
 	\begin{groupplot}[
 	group style={
 			group name=g, group size=3 by 1,
@@ -17,10 +23,12 @@
 			xmode=log, ymode=log,
 			ymin=1, xmin=1,
 			clip marker paths=true,
+			cycle list name=earthy,
 			]
-			\addplot+[only marks] file {172A_broken_length.hist};
+			\addplot+[only marks] file {163A_broken_length.hist};
 			\addplot+[only marks] file {162B_broken_length.hist};
-			\addplot+[only marks,mark=asterisk, black] file {163A_broken_length.hist};
+			\addplot+[only marks] file {172A_broken_length.hist};
+			
 			\addplot[domain=1:32, no marks] {1e6/x^3} node[midway, above right] {-3};
 			\addplot[domain=1:10, no marks] {1e4/x^4} node[midway, below left] {-4};
 			
@@ -36,11 +44,12 @@
 		\nextgroupplot[
 			xlabel=$t/\tau_B$, ylabel={$P_\text{break}(L>3)$  [\%]}, 
 			ymin=0, xmode=log,
-			no marks
+			cycle list name=earthy,
+			%no marks
 			]
-			\addplot table[x expr=\thisrowno{0}/10-18, y expr=\thisrowno{2}*100] {172A.broken} (axis cs:176,0) |- (rel axis cs:1,1);
-			\addplot table[x expr=\thisrowno{0}/10-151, y expr=\thisrowno{2}*100] {162B.broken} (axis cs:16,0) |- (rel axis cs:1,1);
-			\addplot+[black] table[x expr=\thisrowno{0}/10-68, y expr=\thisrowno{2}*100] {163A.broken} (axis cs:7,0) |- (rel axis cs:1,1);
+			\addplot+[black] table[x expr=\thisrowno{0}/10-68, y expr=\thisrowno{2}*100] {163A.broken} (axis cs:5,0) |- (rel axis cs:1,1);
+			\addplot table[x expr=\thisrowno{0}/10-151, y expr=\thisrowno{2}*100] {162B.broken} (axis cs:13,0) |- (rel axis cs:1,1);
+			\addplot table[x expr=\thisrowno{0}/10-18, y expr=\thisrowno{2}*100] {172A.broken} (axis cs:148,0) |- (rel axis cs:1,1);
 			
 			
 	\end{groupplot}
@@ -76,7 +85,8 @@
 \end{tikzpicture}
 \caption{\textbf{Mechanical tension drives coarsening} 
 \textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b} Number of bond breaking function of the future on-graph distance $L$ (after percolation) for three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{blue}{$\bullet$}, \textcolor{red}{\tiny$\blacksquare$} and $*$ respectively.
+\textbf{b} Number of bond breaking function of the future on-graph distance $L$ (after percolation) for the three percolating state points of figure 2 (same colours and markers).
+%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
 \textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (thick red) in the same sample as \textbf{a}.
 \textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for the same state points  as in b. Vertical lines indicate the respective percolation times.
 }
