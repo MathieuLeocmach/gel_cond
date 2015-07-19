@@ -3,14 +3,10 @@
 		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
 		]
 	\pgfplotscreateplotcyclelist{earthy}{%
-	black,
-	red!40!black,
-	red!60!black,
-	red!80!black,
-	red,
-	red!80!yellow,
-	red!60!yellow,
-	red!40!yellow,
+	red!40!black, every mark/.append style={fill=red!40!black},mark=*\\%
+	red!80!black, every mark/.append style={fill=red!80!black}, mark=square*\\%
+	red!80!yellow, mark=o\\%
+	red!40!yellow, every mark/.append style={fill=red!40!yellow},mark=star\\%
 	}
 	\begin{groupplot}[
 	group style={
@@ -19,7 +15,8 @@
 			},
 		width=0.5\columnwidth+1em,%
 		height=10\baselineskip,%
-		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
+		cycle list name=earthy,
 		]
 %		\nextgroupplot[
 %			xlabel={time (min)}, xmin=0,
@@ -31,12 +28,10 @@
 			xlabel=$\bar{N}_C$, xmin=0,
 			ylabel=$l_\text{max}/L$, ymin=0, ymax=1, %ytick={0,0.1,0.2},
 			]
-			\addplot file{168A_2004_percolation.nc_ptp};
-			\addplot file{172A_1206_percolation.nc_ptp};
-			\addplot file{162B.nc_ptp};
 			\addplot file{163A.nc_ptp};
-
-		
+			\addplot file{162B.nc_ptp};
+			\addplot file{172A_1206_percolation.nc_ptp};
+			\addplot file{168A_2004_percolation.nc_ptp};
 		
 		\nextgroupplot[
 			xmode=log, ymode=log,
@@ -69,6 +64,6 @@
 	\node[lab] at (g c1r1.outer north west) {b};
 	\node[lab] at (g c2r1.outer north west) {c};
 	\end{tikzpicture}
-\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is the last frame before melting of Wigner crystal. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Structure factor evolution (a curve every \SI{150}{\second}). \textbf{c} Cahn plot of the initial growth rate $A(q)$. The line is a fit by Eq. XXX with $\xi=0.11\sigma$ and $\xi_{ve}=3.6\sigma$. \textbf{d} Growth of the characteristic wave number.}
+\caption{\textbf{Gelation observed in-situ} in a typical sample ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is the last frame before melting of Wigner crystal. \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters. \textbf{b} Comparision of system evolution in terms of largest cluster extent and of mean coordination number. By increasing density: $\phi=4.2,\,8,\,16,\,27~\%$, $c_p=1,\,1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{red!40!yellow}{$*$}, \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.\textbf{c} Growth of the characteristic wave number for the same samples.}
 \label{fig:wholeprocess}
 \end{figure}
