@@ -28,9 +28,14 @@
 %		\addplot table {155C_percolation_1645.aspect} node[below left] {$\lambda_3/\lambda_1$};
 %		\addplot table[y index=3] {155C_percolation_1645.aspect} node[above left] {$\lambda_2/\lambda_1$};
 		\nextgroupplot[
-			xlabel={coordination number}, xmin=0,
-			ylabel=$R_g^\text{max}/L$, ymin=0, %ymax=0.2, ytick={0,0.1,0.2},
+			xlabel=$\bar{N}_C$, xmin=0,
+			ylabel=$l_\text{max}/L$, ymin=0, ymax=1, %ytick={0,0.1,0.2},
 			]
+			\addplot file{168A_2004_percolation.nc_ptp};
+			\addplot file{172A_1206_percolation.nc_ptp};
+			\addplot file{162B.nc_ptp};
+			\addplot file{163A.nc_ptp};
+
 		
 		
 		\nextgroupplot[
