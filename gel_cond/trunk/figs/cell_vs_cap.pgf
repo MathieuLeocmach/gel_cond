@@ -100,7 +100,8 @@
 			\addplot table [x index=1,y index=2] {phase_diag_fluid.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_clusters.csv};
 			\legend{spinodal, gel, fluid, clusters};
-			\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
+			\addplot[gray, mark=o, every mark/.append style={scale=3}] coordinates {(4.2,1) (7.8, 1.5) (15.7, 1.2) (26.6,1) (7.4, 0.98) (29,0.71)};
+			%\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
 			\node[draw, gray] at (axis cs:25.7, 1.43) (Cap1) {};
 		\end{axis}
 		\node[lab] at (phasediag.outer north west) {d};
@@ -108,6 +109,6 @@
 		%scale bar
 		\draw[ultra thick] node[anchor=south east, inner xsep=0] (sb) at (CapSnapshot.south east |- phasediag.outer south)  {\SI{50}{\micro\metre}} (sb.north east) -- +(-0.069\textwidth,0);
 	\end{tikzpicture}
-	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Confocal picture of a gel formed in situ ($\phi=25.5~\%$, $c_p=\SI{1.4}{\gram\per\litre}$), \SI{1}{\hour} after gelation. \textbf{c} Confocal picture of a gel at the same state point formed ex situ, \SI{1}{\hour} after shear melting. \textbf{d} Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory.}
+	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Confocal picture of a gel formed in situ ($\phi=25.5~\%$, $c_p=\SI{1.4}{\gram\per\litre}$), \SI{1}{\hour} after gelation. \textbf{c} Confocal picture of a gel at the same state point formed ex situ, \SI{1}{\hour} after shear melting. \textbf{d} Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.}
 	\label{fig:cell_vs_cap}
 \end{figure*}
