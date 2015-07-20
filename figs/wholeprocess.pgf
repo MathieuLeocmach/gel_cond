@@ -36,11 +36,15 @@
 		\nextgroupplot[
 			xmode=log, ymode=log,
 			xlabel={$(t-t_0)/\tau_B$}, xmin=1,
-			ylabel=$\langle q\rangle\sigma$, ymin=0.6,
-			ytick={0.6,0.8,1,1.2,1.6,2}, yticklabels={0.6, 0.8,1,1.2,1.6, 2},
+			ylabel=$\langle q\rangle\sigma$, %ymin=0.5,
+			%ytick={0.6,0.8,1,1.2,1.6,2}, yticklabels={0.6, 0.8,1,1.2,1.6, 2},
+			ytick={0.8,1,1.5,2, 3}, yticklabels={0.8,1.0,1.5, 2.0,3.0}
 			]
-		\addplot[only marks] table[x expr=6*(\thisrowno{0}-5)]{155C.qmax};
-		\addplot+[red, no marks, domain=20:200] {4*x^(-1/3)} node[midway, below left]{$-1/3$};
+		\addplot table[x expr=\coordindex, y index=0] {168A_2004_percolation.qmax};
+		\addplot table[x expr=\coordindex, y index=0] {172A_1206_percolation.qmax};
+		\addplot table {162B_total.qmax};
+		\addplot table[x expr=\coordindex, y index=0] {163A_1340_percolation.qmax};
+		\addplot+[black, no marks, domain=20:200] {5*x^(-1/3)} node[midway, below left]{$-1/3$};
 	\end{groupplot}
 
 	
