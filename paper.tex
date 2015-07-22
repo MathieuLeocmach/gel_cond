@@ -26,25 +26,39 @@ A colloidal gel is an important non-ergodic state of matter with a heterogeneous
 \subsection*{Observation of the initial stage}
 
 \begin{figure*}
-	\includegraphics{cell_vs_cap.pdf}
+	\includegraphics{figs/cell_vs_cap.pdf}
 	\caption{\textbf{Reservoir cell} \textbf{a} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b} Confocal picture of a gel formed in situ ($\phi=25.5~\%$, $c_p=\SI{1.4}{\gram\per\litre}$), \SI{1}{\hour} after gelation. \textbf{c} Confocal picture of a gel at the same state point formed ex situ, \SI{1}{\hour} after shear melting. \textbf{d} Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.}
 	\label{fig:cell_vs_cap}
 \end{figure*}
 
 We designed an experimental set-up that allows the observation of the entire process of gelation at a single particle level. For that, we use a colloidal system that is charge stabilised at long range, has a short range depletion attraction, and is sterically stabilised causing nearly hard sphere repulsion at contact. We use sterically stabilised particles of diameter $\sigma=\SI{3}{\micro\metre}$ in a refractive index matching and density matching mixture of organic solvents. In weakly polar solvent, here dielectric constant $\epsilon_r = 5\sim6$, Debye screening length is about $\kappa^{-1}=\SI{10}{\micro\metre}$, enough to keep apart even the large colloids suitable for particle-level confocal microscopy~\cite{Royall2003}. The short ranged, $\sigma/10$, depletion attraction caused by non-adsorbing polymers is masked by the electrostatic repulsion.
 
-We enclose the suspension in a thin microscopy cell sketched in Figure~\ref{fig:cell_vs_cap}a. The bottom wall of the cell is an osmotic membrane providing contact with a long channel full of the same solvent mixture. We introduce solid salt at the other end of the channel that we seal immediately. Salt dissolution and subsequent migration of the ions along the channel and through the membrane induce screening of the electrostatic repulsion, revealing the depletion potential well. This method causes gelation without any solvent flow and allows \textit{in situ} confocal microscopy observation throughout the process.
+We enclose the suspension in a thin microscopy cell sketched in Figure~\ref{fig:cell_vs_cap}a. The bottom wall of the cell is an osmotic membrane providing contact with a long channel full of the same solvent mixture. We introduce solid salt at the other end of the channel that we seal immediately. Salt dissolution and subsequent migration of the ions along the channel and through the membrane induce screening of the electrostatic repulsion, revealing the depletion potential well. The time needed for the ions to diffuse from the membrane across the cell thickness is of the same order of magnitude as the Brownian time of the particles $\tau_B=\SI{10}{\second}$. This method causes uniform gelation without any solvent flow and allows \textit{in situ} confocal microscopy observation throughout the process.
 
 In Figure~\ref{fig:cell_vs_cap}b and c we show the final structures for two gels prepared at the same state point, one by our protocol, the other by introducing in a capillary an existing gel and thus shear melting it. The later is coarser, highlighting that shaking or shear melting protocols~\cite{lu2008gelation,Teece2011,Bartlett2012} are not equivalent to a quench. However even in our case we expect differences compared to a quench simulated via molecular or Brownian dynamics, because of the presence of a solvent mediating hydrodynamic interactions~\cite{Furukawa2010}. Thus our protocol might be very close to application relevant processes where the sudden addition of a component (e.g. salt, acid, depletion agent) induces aggregation in an otherwise stable suspension (e.g. milk).
 
-In Figure~\ref{fig:cell_vs_cap}d we show the phase diagram obtained by our protocol. We observe three possible behaviours: at low polymer concentration ($c_p<0.2\SI{\gram\per\litre}$) sample fully relax to a fluid state; at very low colloid volume fraction ($\phi<0.05$) and high polymer concentration the particles condense into long-lived well separated clusters as observed in~\cite{Lu2006}; in the rest of the explored phase space we observe a long-lived network. We rationalise these observations by superimposing the spinodal line obtained by generalised free volume theory~\cite{Fleer2008}. As expectect
+In Figure~\ref{fig:cell_vs_cap}d we show the phase diagram obtained by our protocol. We observe three possible behaviours: at low polymer concentration ($c_p<\SI{0.2}{\gram\per\litre}$) sample fully relax to a fluid state; at very low colloid volume fraction ($\phi<0.05$) and high polymer concentration the particles condense into long-lived well separated clusters as observed in~\cite{Lu2006}; in the rest of the explored phase space we observe a long-lived network. We rationalise these observations by superimposing the spinodal line obtained by generalised free volume theory~\cite{Fleer2008}. 
 
-Using our protocol, we explored the phase diagram () and found three possible behaviours: permanent gelation as above, transient gelation and cluster formation. Transient gelation is characterised by the formation of a percolating network that melts into separate clusters over a few tens of Brownian times (the time needed for an isolated particle to diffuse over its own radius, here about $\SI{10}{second}$).
+XXX discuss differences between theory and experiment. What is cluster phase? XXX
+
+\begin{figure}
+\includegraphics{figs/wholeprocess.pdf}
+\caption{\textbf{Gelation process} \textbf{a} Reconstruction of experimental coordinates coloured by the number of particles in clusters in a typical sample close to the cluster-gel line ($\phi=7.5~\%$, $c_p=\SI{1}{\gram\per\litre}$). Origin of time is the last frame before melting of Wigner crystal. \textbf{b} Comparision of system evolution in terms of largest cluster extent and of mean coordination number. By increasing density: $\phi=4.2,\,8,\,16,\,27~\%$, $c_p=1,\,1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{red!40!yellow}{$*$}, \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.\textbf{c} Growth of the characteristic wave number for the same samples.}
+\label{fig:wholeprocess}
+\end{figure}
 
 
-The  of the gel shown i highlight that our protocol is not equivalent to a redispersion of an existing gel at the same state point either by shaking or shear melting like in  e.g.~\cite{lu2008gelation,Teece2011,Bartlett2012}. Our protocol is closer to a quench, however we expect differences compared to a quench simulated via molecular or Brownian dynamics, because of the presence of a solvent mediating hydrodynamic interactions~\cite{Furukawa2010}. Thus our protocol might be very close to application relevant processes where the sudden addition of a component (e.g. salt, acid, depletion agent) induces aggregation in an otherwise stable suspension (e.g. milk).
+Figure~\ref{fig:wholeprocess}a shows a computer reconstruction from experimental coordinates of a typical gelation experiment close to the cluster-gel boundary. Immediately before ions enter the cell ($t=0$), the suspension is in a Wigner crystal state where the particles are far apart due to long range repulsion. As soon as the charges are screened, the particles begin to aggregate and form clusters that progressively connect to each other while coarsening to finally percolate through the field of view at $t=\SI{35}{\minute}$.
 
-Figure~\ref{fig:methods}c-h shows a computer reconstruction from experimental coordinates of a typical gelation experiment. We are able to follow the state of the system from (Fig.~\ref{fig:methods}c) a Wigner crystal where the particles are far apart due to repulsion to (Fig.~\ref{fig:methods}h) a fully percolated network. Using this protocol, we explored the phase diagram (Fig.~\ref{fig:methods}b) and found three possible behaviours: permanent gelation as above, transient gelation and cluster formation. Transient gelation is characterised by the formation of a percolating network that melts into separate clusters over a few tens of Brownian times (the time needed for an isolated particle to diffuse over its own radius, here about $\SI{10}{second}$).
+However, this sequence of events is not universal, as shown in Figure~\ref{fig:wholeprocess}b. At higher densities, percolation happen first, within the first few $\tau_B$ after charge screening and then coarsening proceed with an increasing average coordination number $\bar{N}_C$. At lower densities, percolation never takes place and we observe the compaction of individual clusters.
+
+Universality is recovered when investigating the dynamics of the coarsening process. We compute the characteristic wave number $\langle q \rangle$ of the structure factor $S(q)$ and show its temporal evolution in Figure~\ref{fig:wholeprocess}c. We confirm the appearance of a low $q$ peak in $S(q)$, see Supplementary Figure XXX, which is characteristic of spinodal decomposition in a system of a conserved order parameter. At short times $\langle q \rangle$ shows a plateau indicating that the low $q$ peak builds up at constant wave number. At intermediate times, $\langle q \rangle$ scales as $t^{-1/3}$, again coherent with spinodal decomposition kinetics. Finally at longer times each sample deviates from the universal slope to form a plateau indicating arrest. The more dilute samples arrest sooner.
+
+Our observations indicate that both cluster and gel phases are due to an arrested spinodal decomposition: network-type spinodal for the gel, and droplet-type spinodal for the clusters where the initial state is too far from equicomposition to allow a bicontinuous structure.
+
+
+
+Using this protocol, we explored the phase diagram (Fig.~\ref{fig:methods}b) and found three possible behaviours: permanent gelation as above, transient gelation and cluster formation. Transient gelation is characterised by the formation of a percolating network that melts into separate clusters over a few tens of Brownian times (the time needed for an isolated particle to diffuse over its own radius, here about $\SI{10}{second}$).
 
 We observe in Fig.~\ref{fig:methods}b that the spinodal line predicted by the generalized free volume theory~\cite{Fleer2008} corresponds roughly to the boundary between permanent and transient gelation. Furthermore, it means that in our system gelation can happen transiently without an underlying spinodal decomposition dynamics, somewhat in contradiction to~\cite{lu2008gelation}.
 
@@ -209,41 +223,4 @@ To analyse compaction dynamics of clusters with three colloids, we search trajec
 
 \bibliographystyle{naturemag3}
 \bibliography{ico_dyn}
-
-\clearpage
-\begin{figure}
-	\begin{center}
-	\includegraphics{generate-figure0.pdf}
-	\end{center}
-	\caption{\textbf{Observing gelation.} \textbf{a} Sketch of our experimental setup. The blue arrows stands for the diffusion of the salt through the membrane into the observation cell. \textbf{b} Phase diagram of our system. Theoretical lines represent the gas-liquid spinodal (full) and binodal (dashed) as well as the gas-solid coexistence. \textbf{c-h} Early stage of gelation observed experimentally (state point is circled in \textbf{b}). Pictures are computer reconstruction of the experimental coordinates coloured by the number of particles in clusters.}
-	\label{fig:methods}
-\end{figure}
-
-\clearpage
-\begin{figure}
-	\begin{center}
-	\includegraphics{generate-figure1.pdf}
-	\end{center}
-	\caption{\textbf{Fluid and dilute gel.} \textbf{a} Compaction mechanism of 3-particle-clusters in a fluid. The characteristic time to reach the stable compact cluster is much longer than $\tau_B$. \textbf{b} Effective volume fraction for various percolating and non-percolating samples. Dilute gels reach effective volume fractions comparable to dense phases due to their lack of compactness. \textbf{c-d} Time-evolution of the fractal dimension of the non-percolation clusters below (\textbf{c}) and above (\textbf{d}) the gelation boundary. Insets: typical $d_f$ plots for various times.}
-	\label{fig:fluid_dilute}
-\end{figure}
-
-\clearpage
-\begin{figure}
-	\begin{center}
-	\includegraphics{generate-figure2.pdf}
-	\end{center}
-	\caption{\textbf{Gelation in dense samples.} \textbf{a} Typical time evolution of the largest cluster size and of the mean coordination number. Insets: Confocal images (2D) at percolation and at final stage. \textbf{b-d} Typical arm-breaking event, from relaxed, to stretched, to rupture. Particles are drawn to scale and colors indicate potential energies from blue (low) to red (high). The smooth surface is a Gaussian coarse-graining of the network pattern. %\textbf{e-f} Typical loop compaction event.  \textbf{b-f} are top views, thus there is no direct role of sedimentation.
-	}
-	\label{fig:dense}
-\end{figure}
-
-\clearpage
-\begin{figure}
-	\begin{center}
-	%\includegraphics{generate-figure3.pdf}
-	\end{center}
-	\caption{\textbf{Percolation vs compaction} for the three systems studied here: fluid (not percolating), dilute gel and dense gel.}
-	\label{fig:general}
-\end{figure}
 \end{document}
