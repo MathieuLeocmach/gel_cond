@@ -2,12 +2,7 @@
 \begin{tikzpicture}[
 	lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
 	]
-\pgfplotscreateplotcyclelist{earthy}{%
-	red!40!black, every mark/.append style={fill=red!40!black},mark=*\\%
-	red!80!black, every mark/.append style={fill=red!80!black}, mark=square*\\%
-	red!80!yellow, mark=o\\%
-	red!40!yellow, every mark/.append style={fill=red!40!yellow},mark=star\\%
-	}
+
 	\begin{groupplot}[
 	group style={
 			group name=g, group size=3 by 1,

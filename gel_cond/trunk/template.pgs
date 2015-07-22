@@ -11,6 +11,13 @@
 \pgfplotsset{every axis/.append style={small}}
 \pgfplotsset{compat=1.9}
 
+\pgfplotscreateplotcyclelist{earthy}{%
+	red!40!black, every mark/.append style={fill=red!40!black},mark=*\\%
+	red!80!black, every mark/.append style={fill=red!80!black}, mark=square*\\%
+	red!80!yellow, mark=o\\%
+	red!40!yellow, every mark/.append style={fill=red!40!yellow},mark=diamond*\\%
+	}
+
 \usepackage[active,pdftex,tightpage]{preview}
 
 \PreviewEnvironment[]{tikzpicture}

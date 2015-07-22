@@ -2,12 +2,7 @@
 	\begin{tikzpicture}[
 		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
 		]
-	\pgfplotscreateplotcyclelist{earthy}{%
-	red!40!black, every mark/.append style={fill=red!40!black},mark=*\\%
-	red!80!black, every mark/.append style={fill=red!80!black}, mark=square*\\%
-	red!80!yellow, mark=o\\%
-	red!40!yellow, every mark/.append style={fill=red!40!yellow},mark=diamond*\\%
-	}
+
 	\begin{groupplot}[
 	group style={
 			group name=g, group size=2 by 1,
@@ -60,6 +55,7 @@
 			%ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2}, yticklabels={0.1,0.2,,,0.5,,,,,1,2},%
 			legend pos=north east,%
 			legend style={font=\footnotesize},%
+			cycle list name=earthy,
 			only marks,%
 			]%
 			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
@@ -68,7 +64,7 @@
 			%\addplot+[forget plot] table [x index=1,y index=2] {phase_diag_capillary.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
 			\addplot+[blue] table [x index=1,y index=2] {phase_diag_fluid.csv};
-			\addplot+[red!40!yellow, mark=diamond*] table [x index=1,y index=2] {phase_diag_clusters.csv};
+			\addplot table [x index=1,y index=2] {phase_diag_clusters.csv};
 			\legend{spinodal, gel, fluid, clusters};
 			\addplot[gray, mark=o, every mark/.append style={scale=3}] coordinates {(4.2,1) (7.8, 1.5) (15.7, 1.2) (26.6,1) (7.4, 0.98) (29,0.71)};
 			%\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
