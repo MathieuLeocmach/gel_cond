@@ -90,6 +90,7 @@
 			%ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2}, yticklabels={0.1,0.2,,,0.5,,,,,1,2},%
 			legend pos=north east,%
 			legend style={font=\footnotesize},%
+			cycle list name=earthy,
 			only marks,%
 			]%
 			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
@@ -97,7 +98,7 @@
 			%\addplot[sharp plot, no marks, dotted] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
 			%\addplot+[forget plot] table [x index=1,y index=2] {phase_diag_capillary.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
-			\addplot table [x index=1,y index=2] {phase_diag_fluid.csv};
+			\addplot+[blue] table [x index=1,y index=2] {phase_diag_fluid.csv};
 			\addplot table [x index=1,y index=2] {phase_diag_clusters.csv};
 			\legend{spinodal, gel, fluid, clusters};
 			\addplot[gray, mark=o, every mark/.append style={scale=3}] coordinates {(4.2,1) (7.8, 1.5) (15.7, 1.2) (26.6,1) (7.4, 0.98) (29,0.71)};
