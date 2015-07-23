@@ -74,16 +74,10 @@
 		] (cellsketch) {};
 		\node[lab, below right=0, inner sep=0] at (cellsketch.north west) {a};
 		
-		%%%%Capillary vs Reservoir Cell%%%
-		\let\mylena\relax
-		\newlength\mylena
-		\setlength{\mylena}{0.165\textwidth}
-		\node[inner sep=0, below right=1em and 0 of cellsketch.south west] (ResSnapshot) {\includegraphics[width=\mylena, clip,trim=0 0 15mm 0]{Res362A_scan2Snapshot1.jpg}};
-		\node[inner sep=0, below left=1em and 0 of cellsketch.south east] (CapSnapshot) {\includegraphics[width=\mylena, clip,trim=0 0 15mm 0]{Cap362_Snapshot1.jpg}};
-		\node[lab,white] at (ResSnapshot.north west) {b};
-		\node[lab,white] at (CapSnapshot.north west) {c};
 
 		%%% 3D
+		\let\mylena\relax
+		\newlength\mylena
 		\setlength{\mylena}{0.2\textwidth}
 		\matrix[
 		matrix of nodes, inner sep=0, column sep=0.01\textwidth, row sep=0.5em,
@@ -109,6 +103,17 @@
 			\node at (m-2-3.south west) {\SI{45}{\minute}};
 		\end{scope}
 		\node[lab, below right=0] at (m.north west) {d};
+
+		%%%%Capillary vs Reservoir Cell%%%
+		\setlength{\mylena}{0.165\textwidth}
+		\node[inner sep=0, below right=1em and 0 of cellsketch.south west] (ResSnapshot) {\includegraphics[width=\mylena%, clip,trim=0 0 15mm 0
+			]{Res362A_scan2Snapshot1.jpg}};
+		\node[inner sep=0, anchor=north east] (CapSnapshot) at (cellsketch.east |- ResSnapshot.north) {\includegraphics[width=\mylena%, clip,trim=0 0 15mm 0
+			]{Cap362_Snapshot1.jpg}};
+		%scale bar
+		\draw node[anchor=south east, inner ysep=0] (sb) at (CapSnapshot.east |- m.south)  {\SI{50}{\micro\metre}} (sb.west) [ultra thick]-- +(-0.345\mylena,0);
+		\node[lab,white] at (ResSnapshot.north west) {b};
+		\node[lab,white] at (CapSnapshot.north west) {c};
 
 \end{tikzpicture}
 \end{figure*}
