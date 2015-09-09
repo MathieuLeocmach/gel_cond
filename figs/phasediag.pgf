@@ -58,7 +58,7 @@
 			cycle list name=earthy,
 			only marks,%
 			]%
-			\addplot[sharp plot, no marks] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_sg.phd};
+			\addplot[sharp plot, no marks] table [x index=0, y index=1] {gasliquid_sg.phd};
 			%\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
 			%\addplot[sharp plot, no marks, dotted] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
 			%\addplot+[forget plot] table [x index=1,y index=2] {phase_diag_capillary.csv};
