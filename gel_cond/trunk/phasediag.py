@@ -48,14 +48,14 @@ savefig('phasediag.pdf')
 fig = figure('theoretical phase diagram')
 clf()
 
-def xp2th(cp, phi, q=0.1):
+def xp2th(cp, phi, qR=0.1):
     """Converts experimental polymer concentration in osmotic pressure"""
-    return y2piv(cp/alpha(vf2f(phi), qR2q(q)), q)
+    return y2piv(cp/alpha(vf2f(phi), qR2q(qR)), qR)
 
 for phase, color in [('gel', 'r'), ('fluid', 'b'), ('transient', 'g'), ('clusters', 'y')]:
     phi, cp = np.loadtxt('phase_diag_%s.csv'%phase, unpack=True, skiprows=1, usecols=[1,2])
     sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='str')
-    scatter(phi, xp2th(cp, phi*1e-2, 0.1), c=color, label=phase)
+    scatter(phi, xp2th(cp, phi*1e-2, qR), c=color, label=phase)
     for s, p, c in zip(np.atleast_1d(sample), np.atleast_1d(phi), np.atleast_1d(xp2th(cp, phi*1e-2, 0.1))):
         gca().annotate(s, (p,c))
 
