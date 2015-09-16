@@ -11,7 +11,7 @@
 			]
 			\nextgroupplot[
 			xlabel={$\Delta t/\tau_B$}, xmode=log,xmin=1, xmax=100,%
-			ylabel={$P_\text{compaction}$}, ymin=0, ymax=1,
+			ylabel={$P_\text{el}$}, ymin=0, ymax=1,
 			]%
 			\addplot+[draw=none, no marks, error bars/.cd,y dir=both, y explicit, error mark=triangle*] table[y error index=2] {3p_Rg_relaxation.txt};
 			\addplot[domain=1:100] {exp(-x/27)};
