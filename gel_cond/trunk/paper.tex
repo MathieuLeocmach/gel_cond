@@ -91,6 +91,23 @@ Consequently, long-lived elongated clusters have a higher probability to meet vi
 
 \subsection*{Internal stresses}
 
+\begin{figure*}
+\includegraphics{figs/breaking.pdf}
+\caption{\textbf{Mechanical tension drives coarsening} 
+\textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
+\textbf{b} Number of bond breaking function of the future on-graph distance $L$ (after percolation) for the three percolating state points of figure 2 (same colours and markers).
+%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
+\textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (thick red) in the same sample as \textbf{a}.
+\textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for the same state points  as in b. Vertical lines indicate the respective percolation times.
+}
+\label{fig:breaking}
+\end{figure*}
+
+We now change our focus to percolated samples. As we saw in Figure~\ref{fig:phasediag}c, the coarsening in these samples is much slower than what is expected from spinodal decomposition dynamics. The phase separation is arrested, but the system is still ageing, a process sometimes leading to delayed sudden collapse of gels~\cite{Teece2011,Bartlett2012}, a catastrophic phenomenon from the industrial point of view. Previous studies~\cite{Tanaka2007,Bartlett2012} have shown that the main coarsening mechanism is the rupture of strands in the network, a process that to our knowledge has not been followed experimentally at the particle level.
+
+Figure~\ref{fig:breaking}a shows a strand rupture reconstructed from confocal 3D images, the colours mapping the intensity of internal stresses acting on each particle. In practice, the attraction potential well is too narrow relative to the particle localisation errors for us to extract directly the force acting on a particle. Therefore, we use the elongation of the particle neighbourhood as a proxy. The more the bonds around a particle are oriented along a single axis, the more tension is exerted on the particle. This local elongation is quantified using~\cite{steinhardt1983boo} bond orientational order for the 2-fold symmetry $q_2$, see Methods for a precise definition. On Figure~\ref{fig:breaking}a we observe the slow build up of tension over the first \SI{30}{\minute}, until the tension is concentrated on a one particle thin strand. This strand breaks and the particles involved merge in their respective part of the network than can diffuse away from each other.
+
+To detect strand rupture, we use the topology of the bond network. We can consider the gel as a graph with the particles as nodes and the bonds as edges. This graph evolves from frame to frame separated by $3\tau_B$. In the lower part of Figure~\ref{fig:breaking}a we draw in red the shortest on-graph path between two particles of interest. Before the strand rupture, this path is a single bond long. After the rupture, the shortest path is much longer. In general, when two particles were bonded on the previous frame and are no more bonded on the present frame, we define the post-breaking topological distance $L$ as the new shortest distance on the graph between them, minus 1. If the particles still have a common neighbour then $L=1$, because two bonds are needed to go from one to the other. $L=2$ when three bonds are needed, etc.
 
 
 \section{Cluster aggregation} % Subject I: Cluster formation
