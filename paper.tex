@@ -74,17 +74,22 @@ Two questions remain, corresponding respectively to the dilute or dense routes t
 
 In Figure~\ref{fig:hydro}a, we follow the compaction of clusters made of only three particles in a non percolating sample. The probability distribution of the radius of gyration $R_g$ of these triplets shows two peaks on both sides of $R_g^*=0.8\sigma$. For $R_g<R_g^*$ the cluster is compact, with a structure close to an equilateral triangle. For $R_g>R_g^*$ the three particles are aligned and the cluster is elongated. We found that just after the quench most triplets are elongated and then either connect to other clusters or relax to the more stable compact state. To follow this relaxation, we define the probability to stay elongated as
 \begin{equation}
-P_\text{el}(\Delta t) = \langle P(\delta_i(t+\Delta t)|\delta_i(t))\rangle_{t,i}
+P_\text{el}(\Delta t) = \left\langle P\left(\delta_i(t+\Delta t)|\delta_i(t)\right)\right\rangle_{t,i}
 \end{equation}
 where $\delta_i(t)$ is the probability for the triplet $i$ to be elongated at time $t$. The decay of $P_\text{el}(\Delta t)$ has a characteristic time of $27\tau_B$, much longer than the Brownian time. 
 
-The shape of clusters of more than 3 particles cannot be followed in the same way. We compute the principal moments of gyrations $\lambda_j$ with $\lambda_1\geq\lambda_2\geq\lambda_3$. Low values of the aspect ratios $\lambda_2/\lambda_1$ and $\lambda_3/\lambda_1$ indicate that the cluster is flat or even linear. In Figure~\ref{fig:hydro}b, we show the evolution of the average value of these aspect ratios either for a non-percolating sample or before percolation for a percolating one. In both cases, we observe that the clusters are originally not compact and become more isotropic over tens of $\tau_B$.
-
-Figure~\ref{fig:hydro}c
+The shape of clusters of more than 3 particles cannot be followed in the same way. We compute the principal moments of gyrations $\lambda_j$ with $\lambda_1\geq\lambda_2\geq\lambda_3$. Low values of the aspect ratios $\lambda_2/\lambda_1$ and $\lambda_3/\lambda_1$ indicate that the cluster is flat or even linear. In Figure~\ref{fig:hydro}b, we show the evolution of the average value of these aspect ratios either for a non-percolating sample or before percolation for a percolating one. In both cases, we observe that the clusters are originally not compact and become more isotropic over tens of $\tau_B$. As visible in Figure~\ref{fig:cell_vs_cap}d, isotropy is recovered by the fusion of many anisotropic clusters into a branched structure. 
 
 
-These observations can be rationalised by the invocation of hydrodynamic effects. Indeed in a solvent, particles cannot converge freely to form compact structures~\cite{Furukawa2010}. The compaction is delayed by the incompressibility of the solvent. Furthermore, clusters influenced by hydrodynamic interactions tend to be more elongated, less compact.
 
+
+These observations can be rationalised by the invocation of hydrodynamic effects. Indeed in a solvent, particles cannot converge freely to form compact structures~\cite{Furukawa2010}. The compaction is delayed by the incompressibility of the solvent. Furthermore, clusters influenced by hydrodynamic interactions tend to be more elongated, less compact. We can test this hypothesis by measuring at which angle particles meet relative to existing neighbours. If influenced by hydrodynamics, particles should avoid the direction of existing neighbours and come from more open angles.
+
+In Figure~\ref{fig:hydro}c we show the bond angle distribution from three points of view: (i) existing bonds, (ii) bonds that will form within the next $\tau_B$ (iii) bonds that will form within the next $\tau_B$ involving a isolated particle. As expected, existing bonds are preferentially at a \SI{60}{\degree} angle indicating stable packing, with secondary peaks coherent with a mixture of tetrahedral and hexagonal packings. Future bonds have more acute angles and almost never \SI{180}{\degree}, since they are mostly due to particles attached to second neighbours, see sketch on Figure~\ref{fig:hydro}c. Here hydrodynamics plays no role. By contrast, future bonds involving isolated particles form at more obtuse angles, with a clear peak around \SI{180}{\degree}. This confirms that hydrodynamics influences particle aggregation and explains why clusters are initially elongated.
+
+Consequently, long-lived elongated clusters have a higher probability to meet via either rotational or translational diffusion than compact spherical clusters. In Supplementary Figure~\ref{fig:effectiveVF} we show that indeed at all colloidal volume fraction percolation takes place when the effective volume fraction $\phi_\text{eff} = \sum\frac{4\pi}{3}R_g^3$ of the clusters reaches random close packing. Hydrodynamics explains why in a rather dilute regime we can observe immediate formation of elongated clusters and then their slow, diffusion limited aggregation into a percolated structure.
+
+\subsection*{Internal stresses}
 
 
 
