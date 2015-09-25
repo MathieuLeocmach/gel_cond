@@ -6,11 +6,11 @@
 	\begin{groupplot}[
 	group style={
 			group name=g, group size=3 by 1,
-			horizontal sep=4.5em,
+			horizontal sep=5em,
 			},
 		width=0.33\textwidth,%
 		%height=9\baselineskip,%
-		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em}
+		%ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1em}
 		]
 		\nextgroupplot[
 			%height=9\baselineskip,%
@@ -37,15 +37,20 @@
 			\addplot+[thick] table[y expr=\thisrowno{1}*100] {150A_broken_q2_L2.proba};
 		
 		\nextgroupplot[
-			xlabel=$t/\tau_B$, ylabel={$P_\text{break}(L>3)$  [\%]}, 
-			ymin=0, xmode=log,
+			xlabel=$(t-t_0)/\tau_B$, ylabel={$P_\text{break}(L>3)$}, 
+			%ymin=0, 
+			xmode=log, ymode=log, ymin=1e-4,ymax=3e-2	,
 			cycle list name=earthy,
+			clip mode=individual,
 			%no marks
 			]
-			\addplot+[black] table[x expr=\thisrowno{0}/10-68, y expr=\thisrowno{2}*100] {163A.broken} (axis cs:5,0) |- (rel axis cs:1,1);
-			\addplot table[x expr=\thisrowno{0}/10-151, y expr=\thisrowno{2}*100] {162B.broken} (axis cs:13,0) |- (rel axis cs:1,1);
-			\addplot table[x expr=\thisrowno{0}/10-18, y expr=\thisrowno{2}*100] {172A.broken} (axis cs:148,0) |- (rel axis cs:1,1);
-			
+			\addplot file {163A_log.broken} (axis cs:5,1e-4) |- (axis cs:5,3e-2);
+			\addplot file {162B_log.broken} (axis cs:13,1e-4) |- (axis cs:13,3e-2);
+			\addplot file {172A_log.broken} (axis cs:148,1e-4) |- (axis cs:148,3e-2);
+			\pgfplotsset{cycle list shift=-3,};
+			\addplot+[mark=diamond] file {150A_log.broken};
+			\addplot+[mark=triangle] file {153A_log.broken};
+			\addplot[domain=6:100, thick, blue] {x^(-4/3)*0.3}  node[midway, above right] {-4/3};
 			
 	\end{groupplot}
 	
