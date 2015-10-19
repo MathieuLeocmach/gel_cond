@@ -14,7 +14,7 @@
 		]
 		\nextgroupplot[
 			%height=9\baselineskip,%
-			xlabel=$L$, ylabel={count},
+			xlabel=$\Lambda$, ylabel={count},
 			xmode=log, ymode=log,
 			ymin=1, xmin=1,
 			clip marker paths=true,
@@ -37,7 +37,7 @@
 			\addplot+[thick] table[y expr=\thisrowno{1}*100] {150A_broken_q2_L2.proba};
 		
 		\nextgroupplot[
-			xlabel=$(t-t_0)/\tau_B$, ylabel={$P_\text{break}(L>3)$}, 
+			xlabel=$(t-t_0)/\tau_B$, ylabel={$P_\text{break}(\Lambda>3)$}, 
 			%ymin=0, 
 			xmode=log, ymode=log, ymin=1e-4,ymax=3e-2	,
 			cycle list name=earthy,
@@ -85,10 +85,10 @@
 \end{tikzpicture}
 \caption{\textbf{Mechanical tension drives coarsening} 
 \textbf{a} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=\SI{0.7}{\gram\per\litre}$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b} Number of bond breaking function of the future on-graph distance $L$ (after percolation) for the three percolating state points of figure 2 (same colours and markers).
+\textbf{b} Number of bond breaking function of the future on-graph distance $\Lambda$ (after percolation) for the three percolating state points of figure 2 (same colours and markers).
 %three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,\SI{1}{\gram\per\litre}$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
-\textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $L>1$ (thick red) in the same sample as \textbf{a}.
-\textbf{d} Evolution of the topologically relevant bond breaking probability ($L>3$) for the same state points  as in b. Vertical lines indicate the respective percolation times.
+\textbf{c} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $\Lambda>1$ (thick red) in the same sample as \textbf{a}.
+\textbf{d} Evolution of the topologically relevant bond breaking probability ($\Lambda>3$) for the same state points  as in b. Vertical lines indicate the respective percolation times.
 }
 \label{fig:breaking}
 \end{figure*}
