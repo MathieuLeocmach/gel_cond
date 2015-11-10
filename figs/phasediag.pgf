@@ -8,7 +8,7 @@
 			group name=g, group size=2 by 1,
 			horizontal sep=4em,
 			},
-		width=0.5\columnwidth+1em,%
+		width=0.5\columnwidth+0.4em,%
 		height=10\baselineskip,%
 		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
 		cycle list name=earthy,
@@ -52,24 +52,26 @@
 			name={phasediag},%
 			width=\columnwidth, height=0.3\textwidth,%
 			xmin=0, xmax=40, xlabel={$\phi$}, x unit={\%},
-			ymin=0.08, ymax=3.5, ylabel={$c_p$}, y unit={\si{\gram\per\litre}},%
+			ymin=0.08, ymax=2.1, ylabel={$c_p$}, y unit={\si{\milli\gram/\gram}},%
 			%ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2}, yticklabels={0.1,0.2,,,0.5,,,,,1,2},%
 			legend pos=north east,%
 			legend style={font=\footnotesize},%
+			legend columns=4,
 			cycle list name=earthy,
 			only marks,%
 			]%
-			\addplot[sharp plot, no marks] table [x index=0, y index=1] {gasliquid_sg.phd};
+			\addplot[sharp plot, no marks] table [x expr={100*\thisrowno{0}}, y index=1] {gasliquid_sg.phd};
 			%\addplot[sharp plot, no marks, dashed] table [x expr=100*\thisrowno{0}, y index=1] {gasliquid_bg.phd};
 			%\addplot[sharp plot, no marks, dotted] table [x expr=100*\thisrowno{0}, y index=1] {fluidsolid_f.phd};
 			%\addplot+[forget plot] table [x index=1,y index=2] {phase_diag_capillary.csv};
-			\addplot table [x index=1,y index=2] {phase_diag_gel.csv};
-			\addplot+[blue] table [x index=1,y index=2] {phase_diag_fluid.csv};
-			\addplot table [x index=1,y index=2] {phase_diag_clusters.csv};
+			\addplot table [x index=3,y index=2] {phase_diag_gel.csv};
+			\addplot+[blue] table [x index=3,y index=2] {phase_diag_fluid.csv};
+			\addplot table [x index=3,y index=2] {phase_diag_clusters.csv};
 			\legend{spinodal, gel, fluid, clusters};
-			\addplot[gray, mark=o, every mark/.append style={scale=3}] coordinates {(4.2,1) (7.8, 1.5) (15.7, 1.2) (26.6,1) (7.4, 0.98) (29,0.71)};
+			\addplot[gray, mark=o, every mark/.append style={scale=3}] coordinates {(4.7,1) (8.5, 1.5) (16.4, 1.2) (26.3,1) (7.7, 0.98) (22.8,0.71)};
 			%\node[circle, draw, gray] at (axis cs:7.4, 0.98) (155C) {};
-			\node[draw, gray] at (axis cs:25.7, 1.43) (Cap1) {};
+			\node[draw, gray] at (axis cs:33.4, 1.43) (Cap1) {};
+			%\draw (axis cs:8.5,0) |-(rel axis cs:0,1);  #random percolation
 		\end{axis}
 		\node[lab] at (phasediag.outer north west) {a};
 %\draw (g c1r1.outer south west) rectangle +(\columnwidth,\textheight);
