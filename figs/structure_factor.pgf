@@ -18,21 +18,21 @@
 	\begin{groupplot}[name=Sq,
 		group style={
 			group name=g, group size=1 by 4,
-			vertical sep=0.5em,
+			vertical sep=1em,
 			x descriptions at=edge bottom,
 			},
 		xmin=0, xmax=13, ymin=0,
 		xlabel=$q\sigma$, ylabel=$S(q)$,
 		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
 		scale only axis,
-		width=\columnwidth,%-3.5em,
-		%height=6\baselineskip,
+		%width=\columnwidth,%-3.5em,
+		height=10\baselineskip,
 		no marks, cycle list name=earthy]
 
-		\nextgroupplot
+		\nextgroupplot[ymax=3]
 		\foreach \ii in {1,2,...,8}
 			\addplot table[y index=\ii] {163A_structure_factors.txt};
-		\draw[<-] (axis cs:4.3,2.2) |- +(45:1em) node[right]{Wigner};
+		\draw[<-] (axis cs:4.3,2.2) |- +(60:2em) node[right]{Wigner};
 		\draw[<-,red!80!black] (axis cs:6.5,2.1) |- +(45:1.5em) node[right]{Hard sphere};
 		\draw[<-,red!60!yellow] (axis cs:1.5,1.5) |- +(90:1.5em)  node[above]{Gelation};
 		
@@ -53,7 +53,10 @@
 			\addplot table[y index=\ii] {168A_structure_factors.txt};
 		
 	\end{groupplot}
-
+	\node[lab] at (g c1r1.left of north west) {a};
+	\node[lab] at (g c1r2.left of north west) {b};
+	\node[lab] at (g c1r3.left of north west) {c};
+	\node[lab] at (g c1r4.left of north west) {d};
 	
 
 	%\node[lab] at (m.north west) {a};
@@ -61,6 +64,6 @@
 	%\node[lab] at (g c1r1.outer north west) {c};
 	%\node[lab] at (g c2r1.outer north west) {d};
 	\end{tikzpicture}
-\caption{\textbf{Structure factor evolution} \textbf{b} Structure factor evolution (a curve every \SI{150}{\second}). \textbf{c} Cahn plot of the initial growth rate $A(q)$. The line is a fit by Eq. XXX with $\xi=0.11\sigma$ and $\xi_{ve}=3.6\sigma$. \textbf{d} Growth of the characteristic wave number.}
-\label{fig:wholeprocess}
+\caption{\textbf{Structure factor evolution} in the four samples shown on Fig. 2 of the main text by decreasing volume fraction. The thick black curve corresponds to the intial wigner crystal before salt introduction (ill defined thus not shown in \textbf{d}). Thin curves from dark red to yellow are spaced by \SI{150}{\second} and display a peak corresponding to the hard sphere diameter as well as a growing peak at low $q$ inticating gelation.}
+\label{fig:structure_factor}
 \end{figure}
