@@ -15,14 +15,14 @@ d = 1.24
 qR = 2*R/sigma
 cpov = 1000 * (3 * Mw)/(4 * np.pi * (R*1e-9)**3 * N_A * d*1e6)
 q = qR2q(qR)
-print 'qR = %0.3f, q = %0.3f, Cov = %0.3f mg/g'%(qR, q, cpov)
+print('qR = %0.3f, q = %0.3f, Cov = %0.3f mg/g'%(qR, q, cpov))
 
 #osmotic work at overlap
 pivmax = y2piv(1.0, qR)
 
 #load or compute theoretical phase diagram
 fc, pivc = Liu().critical_point(q)
-print 'At critical point colloid volume fraction is %0.3f and osmotic insertion work is %0.3f kT'%(f2vf(fc), pivc)
+print('At critical point colloid volume fraction is %0.3f and osmotic insertion work is %0.3f kT'%(f2vf(fc), pivc))
 if isfile('phasediag.txt'):
     GL = np.loadtxt('phasediag.txt')
 else:
@@ -41,13 +41,13 @@ clf()
 for phase, color, m in [('gel', 'r', 'o'), ('fluid', 'b', '^'), ('transient', 'g', 'v'), ('clusters', 'y', '>')]:
     phi, cp = np.loadtxt('phase_diag_%s.csv'%phase, unpack=True, skiprows=1, usecols=[3,2])
     phi *= 1e-2
-    sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='str')
+    sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='S')
     scatter(phi, cp, c=color, marker=m, label=phase)
     for s, p, c in zip(np.atleast_1d(sample), np.atleast_1d(phi), np.atleast_1d(cp)):
-        gca().annotate(s, (p,c))
+        gca().annotate(s.decode('UTF-8'), (p,c))
 
 #draw tie lines
-for piv, fG, fL in GL[[50,60,70,80,85,88]+range(90,98),:3]:
+for piv, fG, fL in GL[[50,60,70,80,85,88]+list(range(90,98)),:3]:
     cpG = piv2y(piv, qR) * alpha(fG, q) * cpov
     cpL = piv2y(piv, qR) * alpha(fL, q) * cpov
     plot(f2vf(np.array([fG,fL])), [cpG, cpL], '-', color=(0.5,0.5,0.5))
@@ -99,10 +99,10 @@ def xp2th(cp, phi, qR=0.1, cpov=1.):
 for phase, color, m in [('gel', 'r', 'o'), ('fluid', 'b', '^'), ('transient', 'g', 'v'), ('clusters', 'y', '>')]:
     phi, cp = np.loadtxt('phase_diag_%s.csv'%phase, unpack=True, skiprows=1, usecols=[3,2])
     phi *= 1e-2
-    sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='str')
+    sample = np.loadtxt('phase_diag_%s.csv'%phase, usecols=[0], skiprows=1, dtype='S')
     scatter(phi, xp2th(cp, phi, qR, cpov), c=color, marker=m, label=phase)
     for s, p, c in zip(np.atleast_1d(sample), np.atleast_1d(phi), np.atleast_1d(xp2th(cp, phi, qR, cpov))):
-        gca().annotate(s, (p,c))
+        gca().annotate(s.decode('UTF-8'), (p,c))
 
 #draw binodal and spinodals
 for f,l in zip(GL.T[1:], ['--']*2+['-']*2):
