@@ -1,4 +1,6 @@
-\input{preamble}
+%\input{preamble}
+\documentclass[footinbib,amsmath,amssymb,superscriptaddress,twocolumn]{revtex4}
+\usepackage{siunitx}
 
 \usepackage{pgfplots}
 
