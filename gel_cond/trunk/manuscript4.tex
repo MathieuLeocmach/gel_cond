@@ -1,8 +1,7 @@
-\documentclass[preprint,footinbib,amsmath,amssymb,superscriptaddress]{revtex4}
+\documentclass[footinbib,amsmath,amssymb,superscriptaddress,twocolumn]{revtex4}
 \usepackage{graphicx,amsmath}
 \usepackage{color}
 \begin{document}
-\draft
 
 
 \title{Gelation as condensation frustrated by hydrodynamics and mechanical tension}
@@ -47,6 +46,15 @@ From the physical viewpoint, the presence of a fluid component indicates the imp
 
 %However, there have remained many open questions: (1) Spinodal decomposition usually form compact clusters (or, droplet) at low volume fractions where colloidal gels are formed, but actually it produces a space-spanning percolated network.  According to the common knowledge of ordinary phase separation, bicontinuous network can be formed only when the volume fraction is near 50 \%. (2) Even after forming a percolated network, i.e. a gel, structural evolution often slowly continues to proceed. This kind of ageing behaviour is quite important for a long-time stability of a gel state and a crucial problem in industries. (3) It is intuitively appealing that vitrification leads to dynamical arrest of spinodal decomposition and freezes the network structure of gels. But vitrification, or glass transition, is originally defined for bulk materials. On noting that the strands of a gel network are often very thin, and thus it is hardly clear whether we can apply the concept of glass transition as it is to describe dynamic arrest in gelation. 
 
+\begin{figure*}
+	%\includegraphics[width=16cm]{figure1.pdf}
+	\includegraphics{figs/cell_vs_cap2.pdf}
+	\caption{\textbf{Reservoir cell.} \textbf{a,} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b,} Confocal slice of a gel formed \textit{in situ} by our method ($\phi=25.5~\%$, $c_p=1.4$ g/$\ell$), 1 hour after gelation. \textbf{c,} Idem for a gel at the same state point formed \textit{ex situ} and immediately pumped into a capillary. \textbf{d,} Gelation observed by our method. Experimental coordinates are reconstructed and coloured by the number of particles in clusters in a typical sample close to the cluster-gel line ($\phi=7.5~\%$, $c_p=1$ g/$\ell$). Origin of time is the last frame before melting of Wigner crystal.
+	%Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.
+	}
+	\label{fig:cell_vs_cap}
+\end{figure*}
+
 To access these fundamental problems experimentally, we need to study the entire process of gelation from the beginning to the end at the single-particle resolution. 
 Thus, confocal microscopy observation is necessary. However, it has been very difficult to study the very early and late stage of gelation by this method. 
 Gelation of micron-size colloids suitable for quantitative confocal microscopy is usually induced by depletion attractions due to polymers in the solvent. 
@@ -85,6 +93,21 @@ Our novel quench protocol provides an ideal experimental platform to make a comp
 In Fig.~\ref{fig:cell_vs_cap}d, we show a computer reconstruction from experimental coordinates of a typical gelation experiment at a relatively low volume fraction ($\phi=7.5\%$). Immediately before ions enter the cell ($t=0$), the suspension is in a Wigner crystal state where the particles are far apart due to long range Coulomb repulsion. As soon as the charges are screened, the particles begin to aggregate and form clusters that progressively connect to each other while coarsening to finally percolate over the field of view around $t=35$ min.
 
 %\subsection*{Observation of the initial stage}
+\begin{figure}
+%\includegraphics[width=10cm]{figure2.pdf}
+\includegraphics{figs/phasediag.pdf}
+\caption{\textbf{Different regimes of gelation.} \textbf{a,} Phase diagram. Experimental points are categorised based on the final state obtained in reservoir cell. The spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of Fig.~\ref{fig:cell_vs_cap}b-c is highlighted by a square. \textbf{b,} Comparison of system evolution in terms of largest cluster extent and of mean coordination number. By increasing density: $\phi=4.2,\,8,\,16,\,27~\%$, $c_p=1,\,1.5,\,1.2,\, 1$ g/$\ell$ for 
+%\textcolor{red!40!yellow}
+{$\blacklozenge$}, 
+%\textcolor{red!80!yellow}
+{$\circ$}, 
+%\textcolor{red!80!black}
+{\tiny$\blacksquare$} and 
+%\textcolor{red!40!black}
+{$\bullet$} respectively. \textbf{c,} Growth of the characteristic wave number for the same samples. 
+The line is a scaling law for the intermediate coarsening regime for network-forming phase separation.}
+\label{fig:phasediag}
+\end{figure}
 
 In Fig.~\ref{fig:phasediag}a, we show the phase diagram, where we can divide the state points into three regions based on the final state obtained by our protocol: at low polymer concentration ($c_p<0.2$ g/$\ell$) a sample fully relaxes to a fluid state; at very low colloid volume fraction ($\phi<0.05$) and high polymer concentration the particles condense into long-lived well separated clusters as observed in~\cite{Lu2006}; in the rest of the explored phase space we observe a long-lived space spanning network. 
 We also show the theoretical spinodal line obtained by generalised free volume theory~\cite{Fleer2008}, which is in good agreement with our experimental points 
@@ -100,6 +123,12 @@ Our observations indicate that both cluster and gel phases are due to viscoelast
 Here two questions remain, corresponding respectively to the dilute or dense routes to gelation: (i) How can individual clusters percolate a long time after their formation? (ii) How does a percolated network evolve toward more compact states? We will show that the answers come from mechanical effects: respectively hydrodynamics and internal mechanical stresses.
 
 %\subsection*{Role of hydrodynamics}
+\begin{figure}
+	%\includegraphics[width=10cm]{figure3.pdf}
+	\includegraphics{figs/hydro.pdf}
+	\caption{\textbf{Hydrodynamics} \textbf{a,} Probability of staying elongated for a triplet in a non-percolating sample ($\phi=4~\%$, $c_p=1$ g/$\ell$). The continuous line is the best exponential fit of characteristic time $27\tau_B$. Inset: probability distribution of radii of gyration of triplets. \textbf{b,} Evolution of the aspect ratios of clusters of 4 particles and more in the same sample (dashed lines) and in a percolating sample ($\phi=8~\%$, $c_p=1.5$ g/$\ell$, continuous lines). \textbf{c,} Bond angle distribution relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue) obtained in the percolating sample. Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
+	\label{fig:hydro}
+\end{figure}
 
 First we focus on the role of hydrodynamics. 
 In Fig.~\ref{fig:hydro}a, we follow the compaction of clusters made of only three particles in a non-percolating sample. The probability distribution of the radius of gyration $R_g$ of these triplets shows two peaks on both sides of $R_g^*=0.8\sigma$. For $R_g<R_g^*$ the cluster is compact, with a structure close to an equilateral triangle. For $R_g>R_g^*$ the three particles are aligned and the cluster is elongated. We found that just after the quench most triplets are elongated and then either connect to other clusters or relax to the more stable compact state. To follow this relaxation, we define the probability to stay elongated as
@@ -119,6 +148,19 @@ Consequently, long-lived elongated clusters have a higher probability to meet vi
 Hydrodynamics explains why in a rather dilute regime we can observe immediate formation of elongated clusters and then their slow, hydrodynamically-assisted aggregation into a percolated structure.
 We stress that this is a direct consequence of large-size disparity, which leads to the physical situation where discrete solid objects are floating in a continuum liquid. 
 
+\begin{figure*}
+%\includegraphics[width=16cm]{figure4.pdf}
+\includegraphics{figs/breaking.pdf}
+\caption{\textbf{Mechanical tension drives coarsening} 
+\textbf{a,} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=0.7$ g/$\ell$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
+\textbf{b,} Number of bond breaking function of the future on-graph distance $\Lambda$ (after percolation) for the three percolating state points of Fig. 2a (same colours and markers).
+%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,1$g/$\ell$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
+\textbf{c,} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $\Lambda>1$ (thick red) in the same sample as \textbf{a}.
+\textbf{d,} Evolution of the topologically relevant bond breaking probability ($\Lambda>3$) for the same state points as in b. Vertical lines indicate the respective percolation times.
+}
+\label{fig:breaking}
+\end{figure*}
+
 %\subsection*{Network ageing}
 In denser samples, hydrodynamics also helps create elongated structures, but in that case these structures immediately connect and percolate. The increase of the number of
 nearest neighbours to minimize the energy of the structure comes only later.
@@ -133,6 +175,8 @@ which is characteristic of viscoelastic phase separation \cite{tanaka2000viscoel
 As we saw in Fig.~\ref{fig:phasediag}c, the coarsening in these samples is indeed much slower than what is expected from ordinary spinodal decomposition dynamics \cite{onuki2002phase}, 
 suggestive of mechanical frustration effects. The phase separation is arrested, but the system is still ageing slowly, a process sometimes leading to delayed sudden collapse of gels~\cite{poon1999delayed,Bartlett2012}, a catastrophic phenomenon from the industrial point of view. Previous numerical studies~\cite{Tanaka2007,colombo2014self,testard2014intermittent} have shown that the main coarsening mechanism is the rupture of strands in the network, a process that to our knowledge has not been followed experimentally at the particle level.
 Below we provide the first experimental proof of this process. 
+
+
 
 Figure~\ref{fig:breaking}a shows a strand rupture reconstructed from confocal 3D images, the colours mapping the intensity of internal stresses acting on each particle. In practice, the attraction potential well is too narrow relative to the particle localisation errors for us to extract directly the force acting on a particle. Therefore, we use the elongation of the particle neighbourhood as a proxy. The more the bonds around a particle are oriented along a single axis, the more tension is exerted on the particle. This local elongation is quantified using bond orientational order~\cite{steinhardt1983boo} for the 2-fold symmetry $q_2$, see Methods for a precise definition. In Fig.~\ref{fig:breaking}a we observe the slow build up of tension over the first 30 min, until the tension is concentrated on a weak part, a one particle thin strand. This strand breaks and the particles involved merge in their respective part of the network that then stay apart from each other. This is the only elementary process allowed for a percolated network to lower the free energy and it is a mechanically driven coarsening process \cite{Tanaka2007}. The driving force is simply attractive interactions between particles favouring compact structures, which can be rephrased by 
 interfacial energy in a coarse-grained picture. 
@@ -229,53 +273,13 @@ H.Ta. conceived and supervised the project, H. Ts. performed experiments, M.L. a
 {\bf Author Information} Reprints and permissions information is available at www.nature.com/reprints.
 Correspondence and requests for materials should be addressed to H.T. ~(tanaka@iis.u-tokyo.ac.jp).
 
-\clearpage
-\begin{figure*}
-	%\includegraphics[width=16cm]{figure1.pdf}
-	\includegraphics{figs/cell_vs_cap2.pdf}
-	\caption{\textbf{Reservoir cell.} \textbf{a,} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b,} Confocal slice of a gel formed \textit{in situ} by our method ($\phi=25.5~\%$, $c_p=1.4$ g/$\ell$), 1 hour after gelation. \textbf{c,} Idem for a gel at the same state point formed \textit{ex situ} and immediately pumped into a capillary. \textbf{d,} Gelation observed by our method. Experimental coordinates are reconstructed and coloured by the number of particles in clusters in a typical sample close to the cluster-gel line ($\phi=7.5~\%$, $c_p=1$ g/$\ell$). Origin of time is the last frame before melting of Wigner crystal.
-	%Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.
-	}
-	\label{fig:cell_vs_cap}
-\end{figure*}
 
-\clearpage 
-\begin{figure}
-%\includegraphics[width=10cm]{figure2.pdf}
-\includegraphics{figs/phasediag.pdf}
-\caption{\textbf{Different regimes of gelation.} \textbf{a,} Phase diagram. Experimental points are categorised based on the final state obtained in reservoir cell. The spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of Fig.~\ref{fig:cell_vs_cap}b-c is highlighted by a square. \textbf{b,} Comparison of system evolution in terms of largest cluster extent and of mean coordination number. By increasing density: $\phi=4.2,\,8,\,16,\,27~\%$, $c_p=1,\,1.5,\,1.2,\, 1$ g/$\ell$ for 
-%\textcolor{red!40!yellow}
-{$\blacklozenge$}, 
-%\textcolor{red!80!yellow}
-{$\circ$}, 
-%\textcolor{red!80!black}
-{\tiny$\blacksquare$} and 
-%\textcolor{red!40!black}
-{$\bullet$} respectively. \textbf{c,} Growth of the characteristic wave number for the same samples. 
-The line is a scaling law for the intermediate coarsening regime for network-forming phase separation.}
-\label{fig:phasediag}
-\end{figure}
+
 
 \clearpage
-\begin{figure}
-	%\includegraphics[width=10cm]{figure3.pdf}
-	\includegraphics{figs/hydro.pdf}
-	\caption{\textbf{Hydrodynamics} \textbf{a,} Probability of staying elongated for a triplet in a non-percolating sample ($\phi=4~\%$, $c_p=1$ g/$\ell$). The continuous line is the best exponential fit of characteristic time $27\tau_B$. Inset: probability distribution of radii of gyration of triplets. \textbf{b,} Evolution of the aspect ratios of clusters of 4 particles and more in the same sample (dashed lines) and in a percolating sample ($\phi=8~\%$, $c_p=1.5$ g/$\ell$, continuous lines). \textbf{c,} Bond angle distribution relative to existing bonds (gray), to a future bond (red) or to a future bond involving an isolated particle (blue) obtained in the percolating sample. Future bonds are shifted to smaller angles, whereas gas adsorption takes place from larger angles. Insets sketch both cases, with present bonds drawn thick and future bonds drawn dotted.}
-	\label{fig:hydro}
-\end{figure}
+
 
 \clearpage
-\begin{figure*}
-%\includegraphics[width=16cm]{figure4.pdf}
-\includegraphics{figs/breaking.pdf}
-\caption{\textbf{Mechanical tension drives coarsening} 
-\textbf{a,} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=0.7$ g/$\ell$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b,} Number of bond breaking function of the future on-graph distance $\Lambda$ (after percolation) for the three percolating state points of Fig. 2a (same colours and markers).
-%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,1$g/$\ell$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
-\textbf{c,} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $\Lambda>1$ (thick red) in the same sample as \textbf{a}.
-\textbf{d,} Evolution of the topologically relevant bond breaking probability ($\Lambda>3$) for the same state points as in b. Vertical lines indicate the respective percolation times.
-}
-\label{fig:breaking}
-\end{figure*}
+
 
 \end{document}
