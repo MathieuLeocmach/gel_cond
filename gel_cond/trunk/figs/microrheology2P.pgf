@@ -1,0 +1,53 @@
+\begin{figure}
+	\begin{tikzpicture}[
+		lab/.style={below right, text height=0.8em, text depth=0.2em, font=\Large\bfseries},%
+		]
+	\pgfplotsset{vasymptote/.style={
+        before end axis/.append code={
+            \draw[densely dotted] ({rel axis cs:0,0} -| {axis cs:#1,0})
+            -- ({rel axis cs:0,1} -| {axis cs:#1,0});
+    	}
+	}}
+
+	\begin{groupplot}[
+	group style={
+			group name=g, group size=1 by 3,
+			vertical sep=1em,
+			x descriptions at=edge bottom,
+			},
+		width=\columnwidth,%
+		height=0.66\columnwidth,%
+		xlabel={$t/\tau_\mathrm{B}$},
+		ylabel={$G^\prime,\, G^{\prime\prime},\, \Sigma$ (mPa)},
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
+		xmode=log,
+		xmin=1, xmax=2e3,
+		ymin=0,
+		cycle list={%
+			{gray, thick},
+			{red,mark=*},
+			{dashed,mark=o, mark options={solid}},
+			},
+		axis on top,
+		]
+		\nextgroupplot[ymax=6, vasymptote=133]
+			\addplot table[y index=2] {172A_rate_stress.txt}\closedcycle;
+			\addplot table {172A_Gp_2P_f0d1.txt};
+			\addplot table {172A_Gpp_2P_f0d1.txt};
+		
+		\nextgroupplot[ymax=10, vasymptote=13]
+			\addplot table[y index=2] {162B_rate_stress.txt}\closedcycle;
+			\addplot table {162B_Gp_2P_f0d1.txt};
+			\addplot table {162B_Gpp_2P_f0d1.txt};
+
+		\nextgroupplot[ymax=25, vasymptote=2]
+			\addplot table[y index=2] {163A_rate_stress.txt}\closedcycle;
+			\addplot table {163A_Gp_2P_f0d1.txt};
+			\addplot table {163A_Gpp_2P_f0d1.txt};
+
+	\end{groupplot}
+	\node[lab] at (g c1r1.left of north west) {a};
+	\node[lab] at (g c1r2.left of north west) {b};
+	\node[lab] at (g c1r3.left of north west) {c};
+	\end{tikzpicture}
+\end{figure}
