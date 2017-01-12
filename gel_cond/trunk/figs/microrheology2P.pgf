@@ -35,12 +35,12 @@
 			\addplot table {172A_Gp_2P_f0d1.txt};
 			\addplot table {172A_Gpp_2P_f0d1.txt};
 		
-		\nextgroupplot[ymax=10, vasymptote=13]
+		\nextgroupplot[ymax=9, vasymptote=13]
 			\addplot table[y index=2] {162B_rate_stress.txt}\closedcycle;
 			\addplot table {162B_Gp_2P_f0d1.txt};
 			\addplot table {162B_Gpp_2P_f0d1.txt};
 
-		\nextgroupplot[ymax=25, vasymptote=2]
+		\nextgroupplot[ymax=22, vasymptote=2]
 			\addplot table[y index=2] {163A_rate_stress.txt}\closedcycle;
 			\addplot table {163A_Gp_2P_f0d1.txt};
 			\addplot table {163A_Gpp_2P_f0d1.txt};
