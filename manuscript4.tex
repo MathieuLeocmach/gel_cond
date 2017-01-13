@@ -1,18 +1,23 @@
 \documentclass[footinbib,amsmath,amssymb,superscriptaddress,twocolumn]{revtex4}
 \usepackage{graphicx,amsmath}
 \usepackage{color}
+
+\newcommand{\FigLossTangent}{XXX}
+
 \begin{document}
 
 
 \title{Gelation as condensation frustrated by hydrodynamics and mechanical tension}
-\author{Hideyo Tsurusawa}
-\affiliation{ {Institute of Industrial Science, University of Tokyo, 4-6-1 Komaba, Meguro-ku, Tokyo 153-8505, Japan} }
-%\thanks{These authors contributed equally to this work}
 \author{Mathieu Leocmach}
-\affiliation{Univ Lyon, Université Claude Bernard Lyon 1, CNRS, Institut Lumière Matière, F-69622, VILLEURBANNE, France}
-%\thanks{These authors contributed equally to this work}
+\thanks{These authors contributed equally to this work}
+\affiliation{Univ Lyon, Universit\'e Claude Bernard Lyon 1, CNRS, Institut Lumi\`ere Mati\`ere, F-69622, VILLEURBANNE, France}
+\author{Hideyo Tsurusawa}
+\thanks{These authors contributed equally to this work}
+\affiliation{ {Institute of Industrial Science, University of Tokyo, 4-6-1 Komaba, Meguro-ku, Tokyo 153-8505, Japan} }
+\author{John Russo}
+\affiliation{ {School of Mathematics, University of Bristol, Bristol BS8 1TW, United Kingdom} }
 \author{Hajime Tanaka}
-%\email{tanaka@iis.u-tokyo.ac.jp}
+\email{tanaka@iis.u-tokyo.ac.jp}
 \affiliation{ {Institute of Industrial Science, University of Tokyo, 4-6-1 Komaba, Meguro-ku, Tokyo 153-8505, Japan} }
 
 \begin{abstract}
@@ -28,6 +33,15 @@ These findings provide an experimental basis for understanding the microscopic p
 \end{abstract}
 
 \maketitle
+
+\begin{figure*}
+	%\includegraphics[width=16cm]{figure1.pdf}
+	\includegraphics{figs/cell_vs_cap2.pdf}
+	\caption{\textbf{Reservoir cell.} \textbf{a,} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b,} Confocal slice of a gel formed \textit{in situ} by our method ($\phi=25.5~\%$, $c_p=1.4$ g/$\ell$), 1 hour after gelation. \textbf{c,} Idem for a gel at the same state point formed \textit{ex situ} and immediately pumped into a capillary. \textbf{d,} Gelation observed by our method. Experimental coordinates are reconstructed and coloured by the number of particles in clusters in a typical sample close to the cluster-gel line ($\phi=7.5~\%$, $c_p=1$ g/$\ell$). Origin of time is the last frame before melting of Wigner crystal.
+	%Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.
+	}
+	\label{fig:cell_vs_cap}
+\end{figure*}
 
 %\section*{Introduction} 
 Gels do not flow and behave as soft solids in a macroscopic scale, but have excellent fluid-like transport characteristics in a microscopic scale, 
@@ -46,14 +60,7 @@ From the physical viewpoint, the presence of a fluid component indicates the imp
 
 %However, there have remained many open questions: (1) Spinodal decomposition usually form compact clusters (or, droplet) at low volume fractions where colloidal gels are formed, but actually it produces a space-spanning percolated network.  According to the common knowledge of ordinary phase separation, bicontinuous network can be formed only when the volume fraction is near 50 \%. (2) Even after forming a percolated network, i.e. a gel, structural evolution often slowly continues to proceed. This kind of ageing behaviour is quite important for a long-time stability of a gel state and a crucial problem in industries. (3) It is intuitively appealing that vitrification leads to dynamical arrest of spinodal decomposition and freezes the network structure of gels. But vitrification, or glass transition, is originally defined for bulk materials. On noting that the strands of a gel network are often very thin, and thus it is hardly clear whether we can apply the concept of glass transition as it is to describe dynamic arrest in gelation. 
 
-\begin{figure*}
-	%\includegraphics[width=16cm]{figure1.pdf}
-	\includegraphics{figs/cell_vs_cap2.pdf}
-	\caption{\textbf{Reservoir cell.} \textbf{a,} Sketch of our experimental setup. The observation cell contains initially colloids, polymer and no salt. \textbf{b,} Confocal slice of a gel formed \textit{in situ} by our method ($\phi=25.5~\%$, $c_p=1.4$ g/$\ell$), 1 hour after gelation. \textbf{c,} Idem for a gel at the same state point formed \textit{ex situ} and immediately pumped into a capillary. \textbf{d,} Gelation observed by our method. Experimental coordinates are reconstructed and coloured by the number of particles in clusters in a typical sample close to the cluster-gel line ($\phi=7.5~\%$, $c_p=1$ g/$\ell$). Origin of time is the last frame before melting of Wigner crystal.
-	%Phase diagram obtained in reservoir cell. Spinodal line is obtained from free volume theory. State points analysed in the text are circled. The state point of \textbf{b-c} is highlighted by a square.
-	}
-	\label{fig:cell_vs_cap}
-\end{figure*}
+
 
 To access these fundamental problems experimentally, we need to study the entire process of gelation from the beginning to the end at the single-particle resolution. 
 Thus, confocal microscopy observation is necessary. However, it has been very difficult to study the very early and late stage of gelation by this method. 
@@ -148,28 +155,7 @@ Consequently, long-lived elongated clusters have a higher probability to meet vi
 Hydrodynamics explains why in a rather dilute regime we can observe immediate formation of elongated clusters and then their slow, hydrodynamically-assisted aggregation into a percolated structure.
 We stress that this is a direct consequence of large-size disparity, which leads to the physical situation where discrete solid objects are floating in a continuum liquid.
 
-\begin{figure}
-\includegraphics{figs/microrheology2P.pdf}
-\caption{\textbf{Time-dependent microrheology} of three percolating samples.
-By increasing density from top to bottom $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\, 1$ g/$\mathrm{\ell}$. 
-The thick gray curve is the internal stress $\Sigma$ obtained from the measure of bond-breaking rate. 
-Elastic ($G^\prime$) and viscous ($G^{\prime\prime}$) shear moduli, obtained by two-particle microrheology, are drawn respectively as red filled and black open circles. 
-The dotted vertical line shows the percolation time.
-}
-\end{figure}
 
-\begin{figure*}
-%\includegraphics[width=16cm]{figure4.pdf}
-\includegraphics{figs/breaking.pdf}
-\caption{\textbf{Mechanical tension drives coarsening} 
-\textbf{a,} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=0.7$ g/$\ell$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
-\textbf{b,} Number of bond breaking function of the future on-graph distance $\Lambda$ (after percolation) for the three percolating state points of Fig. 2a (same colours and markers).
-%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,1$g/$\ell$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
-\textbf{c,} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $\Lambda>1$ (thick red) in the same sample as \textbf{a}.
-\textbf{d,} Evolution of the topologically relevant bond breaking probability ($\Lambda>3$) for the same state points as in b. Vertical lines indicate the respective percolation times.
-}
-\label{fig:breaking}
-\end{figure*}
 
 %\subsection*{Network ageing}
 In denser samples, hydrodynamics also helps create elongated structures, but in that case these structures immediately connect and percolate. The increase of the number of
@@ -185,6 +171,57 @@ which is characteristic of viscoelastic phase separation \cite{tanaka2000viscoel
 As we saw in Fig.~\ref{fig:phasediag}c, the coarsening in these samples is indeed much slower than what is expected from ordinary spinodal decomposition dynamics \cite{onuki2002phase}, 
 suggestive of mechanical frustration effects. The phase separation is arrested, but the system is still ageing slowly, a process sometimes leading to delayed sudden collapse of gels~\cite{poon1999delayed,Bartlett2012}, a catastrophic phenomenon from the industrial point of view. Previous numerical studies~\cite{Tanaka2007,colombo2014self,testard2014intermittent} have shown that the main coarsening mechanism is the rupture of strands in the network, a process that to our knowledge has not been followed experimentally at the particle level.
 Below we provide the first experimental proof of this process. 
+
+\begin{figure}
+\includegraphics{figs/microrheology2P.pdf}
+\caption{\textbf{Time-dependent microrheology} of three percolating samples.
+By increasing density from top to bottom $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\, 1$ g/$\mathrm{\ell}$. 
+The thick gray curve is the internal stress $\Sigma$ obtained from the measure of bond-breaking probability. 
+Elastic ($G^\prime$) and viscous ($G^{\prime\prime}$) shear moduli at high frequency ($f=0.1\tau_\mathrm{B}^{-1}$), obtained by two-particle microrheology, are drawn respectively as red filled and black open circles. 
+The dotted vertical line shows the percolation time.
+}
+\label{fig:microrheology2P}
+\end{figure}
+
+Following \citet{Lindstrom2012} we express the bond dissociation rate $k_D$ under a force $\mathcal{F}$ as 
+\begin{equation}
+k_D(\mathcal{F}) = k_D(\mathcal{F}=0) \exp\left(\frac{\mathcal{F} \delta}{k_\mathrm{B}T}\right)
+\end{equation}
+with $\delta$ the width of the potential, here the depletion range obtained from generalized free volume theory~\cite{Fleer2008}. $k_D(\mathcal{F}=0)$ depends only on the depth and shape of the interaction potential. From our particle-level experimental data, we can measure at each time step the probability for a bond to break. This probability decays from high values at short times to an asymptotic, finite value at long times. We checked that $k_D(t\rightarrow\infty)$ decreases with increasing polymer concentration and thus the attractive potential depth. Although, due to the small but finite value of the Debye length, $k_D(t\rightarrow\infty)$ cannot be related to the theoretical depth of the depletion potential~\cite{VanDoorn2016}.
+
+The decay of $k_D$ takes tens of Brownian times, a time scale much longer than ion diffusion throughout the cell. Therefore the interaction potential can be considered stable and the evolution of $k_D$ translates directly in an evolution of $\mathcal{F}$. 
+\begin{equation}
+\mathcal{F}(t) = \frac{k_\mathrm{B}T}{\delta} \log\frac{k_D(t)}{k_D(t\rightarrow\infty)}
+\end{equation}
+where we assume that the final state is force-free $k_D(t\rightarrow\infty) = k_D(\mathcal{F}=0)$. Using the contact area of the depletion potential we can convert $f$ into a statistical measure of the internal stress $\Sigma (t) = 2 \mathcal{F}(t) /(\pi \sigma \delta^2)$.
+
+To put internal stress relaxation in perspective, we need to know when the system becomes solid. The rheological definition of the gelation point is the time when the elastic and viscous parts of the shear modulus (respectively $G^\prime$ and $G^{\prime\prime}$) both scale as identical power laws of frequency $f$, in other words $G^{\prime\prime}/G^\prime$ is independent of the frequency~\cite{Chambon1987}. To measure 
+the shear modulus, we use the particles themselves as passive rheological probes. Following~\citet{Crocker2000} we convert two-particle mean square displacements $\Delta r^2(t, \Delta t)$ in $G^\prime(t, f)$ and $G^{\prime\prime}(t, f)$. Supplementary figure~\FigLossTangent{} shows the evolution of $G^{\prime\prime}/G^\prime$ for three percolating samples, for three frequencies each. The convergence of the different frequencies is obvious for all samples, however only the two samples with highest volume fractions actually reach the gelation point during the experimental time. Nonetheless all three samples reach $G^\prime > G^{\prime\prime}$ at high frequencies. 
+
+In Figure~\ref{fig:microrheology2P}, to relate the timing of stress relaxation, mechanical gelation and percolation, we superimpose the time evolutions of internal stress and both parts of the shear moduli at the highest accessible frequency ($f=0.1\tau_\mathrm{B}^{-1}$). The time needed for $\Sigma(t)$ to relax completely seems to be approximatively independent of colloid volume fraction. Moreover, stress relaxation occurs independently of percolation. In dilute gels, Figure~\ref{fig:microrheology2P}a, internal stresses are relaxed when percolation takes place, whereas in dense gels, Figure~\ref{fig:microrheology2P}c, stress relaxation occurs mostly after percolation. Percolation is obviously a necessary condition for mechanical gelation, since the crossing of $G^\prime$ and $G^{\prime\prime}$ occurs always later than percolation. However there is a long delay between percolation and the rise of $G^\prime$, therefore percolation is not enough to ensure mechanical stability. In dense gel, Figure~\ref{fig:microrheology2P}c, the just percolated network rearranges under internal stresses until a mechanically stable configuration is found. For dilute gels, Figure~\ref{fig:microrheology2P}a, we observe larger fluctuations on $\Sigma(t)$ after percolation, probably due to the release of local internal stresses progressively leading to a mechanically stable configuration.
+
+
+
+
+%- dense gels have much higher moduli than dilute ones
+
+
+
+
+
+
+\begin{figure*}
+%\includegraphics[width=16cm]{figure4.pdf}
+\includegraphics{figs/breaking.pdf}
+\caption{\textbf{Mechanical tension drives coarsening} 
+\textbf{a,} Reconstruction from experimental coordinates ($\phi=29~\%$, $c_p=0.7$ g/$\ell$) of coarsening process geometry (top) and topology (bottom). Particles are drawn to scale and coloured by $q_2$ from blue (low) to red (high). The meshed surface is a Gaussian coarse-graining of the network pattern. The red line indicates the shortest on-graph path between the two particles of interest. 
+\textbf{b,} Number of bond breaking function of the future on-graph distance $\Lambda$ (after percolation) for the three percolating state points of Fig. 2a (same colours and markers).
+%three state points of increasing density: $\phi=8,\,16,\,27~\%$, $c_p=1.5,\,1.2,\,1$g/$\ell$ for \textcolor{red!80!yellow}{$\circ$}, \textcolor{red!80!black}{\tiny$\blacksquare$} and \textcolor{red!40!black}{$\bullet$} respectively.
+\textbf{c,} Probability for a bond to break during $3\tau_B$ function of bond-centred $q_2$ for all events (blue) and for events with $\Lambda>1$ (thick red) in the same sample as \textbf{a}.
+\textbf{d,} Evolution of the topologically relevant bond breaking probability ($\Lambda>3$) for the same state points as in b. Vertical lines indicate the respective percolation times.
+}
+\label{fig:breaking}
+\end{figure*}
 
 
 
