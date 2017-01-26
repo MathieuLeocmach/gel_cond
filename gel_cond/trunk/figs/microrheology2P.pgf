@@ -33,14 +33,14 @@
 		ytick style=red!75!black,
 	    yticklabel style=red!75!black,
 	    ylabel style=red!75!black,
-		cycle list={{red!75!black},},
+		cycle list={{const plot,fill=red!75!black, draw=none},},
 	]
 	\nextgroupplot
-		\addplot table {172A_maxLambda.txt};
+		\addplot table {172A_maxLambda.txt}\closedcycle;
 	\nextgroupplot
-		\addplot table {162B_maxLambda.txt};
+		\addplot table {162B_maxLambda.txt}\closedcycle;
 	\nextgroupplot
-		\addplot table {163A_maxLambda.txt};
+		\addplot table {163A_maxLambda.txt}\closedcycle;
 
 
 	\end{groupplot}
