@@ -9,28 +9,59 @@
     	}
 	}}
 
+	\pgfplotsset{group style={
+		group size=1 by 3,
+		vertical sep=1em,
+		x descriptions at=edge bottom,
+		every plot/.style={
+			width=\columnwidth-6em,%
+			height=0.66\columnwidth-4em,%
+			%xmode=log,
+			xmin=1, xmax=2e3,
+			scale only axis,
+		}
+	}}
+
 	\begin{groupplot}[
-	group style={
-			group name=g, group size=1 by 3,
-			vertical sep=1em,
-			x descriptions at=edge bottom,
-			},
-		width=\columnwidth,%
-		height=0.66\columnwidth,%
+		group/y descriptions at=edge right,
+		ylabel={$\Lambda_\mathrm{max}$},
+		xmode=log,
+		ymin=0, ymax=160,
+		every axis y label/.append style={anchor=base, yshift=-0.5em},
+		axis y line*=right,
+		axis x line=none,
+		ytick style=red!75!black,
+	    yticklabel style=red!75!black,
+	    ylabel style=red!75!black,
+		cycle list={{red!75!black},},
+	]
+	\nextgroupplot
+		\addplot table {172A_maxLambda.txt};
+	\nextgroupplot
+		\addplot table {162B_maxLambda.txt};
+	\nextgroupplot
+		\addplot table {163A_maxLambda.txt};
+
+
+	\end{groupplot}
+
+	\begin{groupplot}[
+		group/y descriptions at=edge left,
+		group/group name=g,
+		axis y line*=left,
 		xlabel={$t/\tau_\mathrm{B}$},
 		ylabel={$G^\prime,\, G^{\prime\prime},\, \Sigma$ (mPa)},
-		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.5em},
+		ylabel absolute, every axis y label/.append style={anchor=base, yshift=-1.75em},
 		xmode=log,
-		xmin=1, xmax=2e3,
 		ymin=0,
 		cycle list={%
 			{gray, thick},
-			{red,mark=*},
-			{dashed,mark=o, mark options={solid}},
+			{black,mark=*},%, mark options={solid, draw=white}},
+			{dashed,mark=*, mark options={solid, fill=white}},
 			},
-		axis on top,
+		%axis on top,
 		]
-		\nextgroupplot[ymax=6, vasymptote=133]
+		\nextgroupplot[ymax=8, vasymptote=133]
 			\addplot table[y index=2] {172A_rate_stress.txt}\closedcycle;
 			\addplot table {172A_Gp_2P_f0d1.txt};
 			\addplot table {172A_Gpp_2P_f0d1.txt};
@@ -46,6 +77,7 @@
 			\addplot table {163A_Gpp_2P_f0d1.txt};
 
 	\end{groupplot}
+	%\draw (g c1r1.outer north west) rectangle +(\columnwidth, -\textheight);
 	\node[lab] at (g c1r1.left of north west) {a};
 	\node[lab] at (g c1r2.left of north west) {b};
 	\node[lab] at (g c1r3.left of north west) {c};
