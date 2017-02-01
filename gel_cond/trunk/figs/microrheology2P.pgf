@@ -62,7 +62,7 @@
 		%axis on top,
 		]
 		\nextgroupplot[ymax=8]%, vasymptote=133]
-			\addplot table[y index=2] {172A_rate_stress.txt}\closedcycle;
+			\addplot table[y index=2] {172A_rate_stress.decimated}\closedcycle;
 			\addplot table {172A_Gp_2P_f0d1.txt};
 			\addplot table {172A_Gpp_2P_f0d1.txt};
 			\vasymptote[cyan]{148};
@@ -70,7 +70,7 @@
 			\vasymptote[magenta, very thick]{629};
 		
 		\nextgroupplot[ymax=9]%, vasymptote=13]
-			\addplot table[y index=2] {162B_rate_stress.txt}\closedcycle;
+			\addplot table[y index=2] {162B_rate_stress.decimated}\closedcycle;
 			\addplot table {162B_Gp_2P_f0d1.txt};
 			\addplot table {162B_Gpp_2P_f0d1.txt};
 			\vasymptote[cyan]{13};
@@ -78,7 +78,7 @@
 			\vasymptote[magenta, very thick]{146};
 
 		\nextgroupplot[ymax=22]%, vasymptote=2]
-			\addplot table[y index=2] {163A_rate_stress.txt}\closedcycle;
+			\addplot table[y index=2] {163A_rate_stress.decimated}\closedcycle;
 			\addplot table {163A_Gp_2P_f0d1.txt};
 			\addplot table {163A_Gpp_2P_f0d1.txt};
 			\vasymptote[cyan]{2};
@@ -116,7 +116,7 @@
 	\end{groupplot}
 \end{scope}
 
-	\draw (g c1r1.outer north west) rectangle +(\textwidth, -\textheight);
+	%\draw (g c1r1.outer north west) rectangle +(\textwidth, -\textheight);
 	\node[lab] at (g c1r1.outer north west) {a};
 	\node[lab] at (g c2r1.outer north west|-g c1r1.outer north west) {b};
 	\node[lab] at (g c3r1.outer north west|-g c1r1.outer north west) {c};
